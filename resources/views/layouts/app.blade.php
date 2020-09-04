@@ -22,7 +22,13 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/client/css/style.css') }}" media="screen">
 </head>
 <body>
+    <div id="container">
+        @include('layouts.nav')
 
+        @yield('content')
+
+        @include('layouts.footer')
+    </div>
 <script type="text/javascript" src="{{ asset('assets/client/js/jquery.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('assets/client/js/jquery.migrate.js') }}"></script>
 <script type="text/javascript" src="{{ asset('assets/client/js/jquery.bxslider.min.js') }}"></script>
@@ -35,5 +41,6 @@
 <script type="text/javascript" src="{{ asset('assets/client/js/retina-1.1.0.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('assets/client/js/plugins-scroll.js') }}"></script>
 <script type="text/javascript" src="{{ asset('assets/client/js/script.js') }}"></script>
+@yield('script')
 </body>
 </html>
