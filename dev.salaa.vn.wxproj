@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<winginx>
+  <project>
+    <name>dev.salaa.vn</name>
+    <url>http://dev.salaa.vn/</url>
+    <root>home/dev.salaa.vn</root>
+  </project>
+</winginx>
