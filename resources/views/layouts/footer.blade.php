@@ -5,7 +5,7 @@
                 <div class="col-md-3">
                     <div class="widget text-widget">
                         <h1>About</h1>
-                        <img src="images/data/footer-logo.png" class="img-responsive">
+                        <img src="{{ asset('assets/client/images/data/footer-logo.png') }}" class="img-responsive">
                     </div>
                 </div>
                 <div class="col-md-9">
