@@ -23,6 +23,7 @@ class CreatePostsTable extends Migration
             $table->integer('view_count')->default(0);
             $table->integer('author')->nullable();
             $table->integer('status')->default(1);
+            $table->integer('category_id')->nullable();
             $table->json('tag')->nullable();
             $table->timestamps();
         });

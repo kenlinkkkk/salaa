@@ -24,7 +24,7 @@
 <body>
     <div id="container">
         @include('layouts.nav')
-
+        @include('layouts.breaking')
         @yield('content')
 
         @include('layouts.footer')
