@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Repositories\Admin\CategoryEloquentRepository;
 use Illuminate\Http\Request;
+use Throwable;
 
 class CategoryController extends Controller
 {
@@ -37,12 +38,34 @@ class CategoryController extends Controller
     public function create(Request $request)
     {
         $data = $request->except('_token');
-        $data['slug'] = url_slug($data['name']);
+        $data['slug'] = url_slug('Cộng hoà xã hội  chủ nghĩa Việt Nam');
 
-        dd($data);
+        if ($request->hasFile('picture')) {
+            $picture = $request->picture;
+            $filePath = 'uploads/home';
+            $filePath = str_replace('\\', '/', $filePath);
+
+            $picture_name = $picture->getClientOriginalName();
+            $picture->move($filePath, $picture_name);
+            $data['picture'] = $filePath.'/'.$picture_name;
+        }
+
+        try {
+            $result = $this->categoryEloquentRepository->create($data);
+
+            if ($result) {
+                $request->session()->flash('success', 'Thêm thành công');
+            } else {
+                $request->session()->flash('error', 'Thêm mới thất bại');
+            }
+
+            return redirect(route('admin.page.index'));
+        } catch (Throwable $exception) {
+            report($exception);
+        }
     }
 
-    public function update()
+    public function update(Request $request, $category_id)
     {
 
     }
