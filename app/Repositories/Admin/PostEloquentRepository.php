@@ -5,7 +5,7 @@ namespace App\Repositories\Admin;
 
 
 use App\Models\Post;
-use AppRepositories\EloquentRepository;
+use App\Repositories\EloquentRepository;
 
 class PostEloquentRepository extends EloquentRepository
 {

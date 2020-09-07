@@ -15,7 +15,11 @@ class TagController extends Controller
 
     public function index()
     {
+        $tags = $this->tagEloquentRepository->getAll();
 
+        $data = compact('tags');
+
+        return view('admin.tag.index', $data);
     }
 
     public function add()

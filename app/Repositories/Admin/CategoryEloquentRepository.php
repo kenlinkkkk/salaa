@@ -5,7 +5,7 @@ namespace App\Repositories\Admin;
 
 
 use App\Models\Category;
-use AppRepositories\EloquentRepository;
+use App\Repositories\EloquentRepository;
 
 class CategoryEloquentRepository extends EloquentRepository
 {

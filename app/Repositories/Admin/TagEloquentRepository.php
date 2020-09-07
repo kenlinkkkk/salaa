@@ -5,7 +5,8 @@ namespace App\Repositories\Admin;
 
 
 use App\Models\Tag;
-use AppRepositories\EloquentRepository;
+use App\Repositories\EloquentRepository;
+
 
 class TagEloquentRepository extends EloquentRepository
 {
