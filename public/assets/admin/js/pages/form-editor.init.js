@@ -21,6 +21,7 @@ $(document).ready(function () {
         automatic_uploads: true,
         images_upload_url: '/admin/post/upload',
         file_picker_types: 'image',
+        convert_urls: false,
         file_picker_callback: function(cb, value, meta) {
             var input = document.createElement('input');
             input.setAttribute('type', 'file');
@@ -37,8 +38,8 @@ $(document).ready(function () {
                     var base64 = reader.result.split(',')[1];
                     var blobInfo = blobCache.create(id, file, base64);
                     blobCache.add(blobInfo);
-                    console.log(blobInfo.blobUri());
                     cb(blobInfo.blobUri(), { title: file.name });
+                    console.table(blobInfo.blobUri());
                 };
             };
             input.click();
