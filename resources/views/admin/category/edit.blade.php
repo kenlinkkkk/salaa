@@ -41,7 +41,7 @@
                             <div class="form-group col-sm-12 col-md-8">
                                 <label>Ảnh nền <span class="text-danger">(*)</span></label>
                                 <div class="custom-file">
-                                    <input type="file" class="custom-file-input" id="customFile" name="picture" required>
+                                    <input type="file" class="custom-file-input" id="customFile" name="picture">
                                     <label class="custom-file-label" for="customFile">Choose file</label>
                                 </div>
                             </div>
@@ -58,10 +58,10 @@
                             </div>
                         </div>
                         <label>Mô tả <span class="text-danger">(*)</span></label>
-                        <textarea class="form-control" name="short_description" required>{{ $category->description }}</textarea>
+                        <textarea class="form-control" name="description" required>{{ $category->description }}</textarea>
                         <p class="text-danger">Trường (*) là bắt buộc</p>
                         <div class="form-group d-flex justify-content-end">
-                            <button type="submit" name="submit" class=" m-2 btn btn-sm btn-success">Thêm mới</button>
+                            <button type="submit" name="submit" class=" m-2 btn btn-sm btn-success">Cập nhật</button>
                             <a href="{{ route('admin.category.index') }}" class="m-2 btn btn-sm btn-warning">Trở về</a>
                         </div>
                     </form>

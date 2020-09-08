@@ -58,7 +58,7 @@
                             </div>
                         </div>
                         <label>Mô tả <span class="text-danger">(*)</span></label>
-                        <textarea class="form-control" name="short_description" required></textarea>
+                        <textarea class="form-control" name="description" required></textarea>
                         <p class="text-danger">Trường (*) là bắt buộc</p>
                         <div class="form-group d-flex justify-content-end">
                             <button type="submit" name="submit" class=" m-2 btn btn-sm btn-success">Thêm mới</button>
