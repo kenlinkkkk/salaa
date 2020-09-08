@@ -12,7 +12,7 @@ class Post extends Model
         'title', 'slug', 'picture', 'description', 'content', 'view_count', 'author','tag', 'category_id', 'status'
     ];
 
-    public function author()
+    public function author_name()
     {
         return $this->belongsTo(User::class, 'author');
     }

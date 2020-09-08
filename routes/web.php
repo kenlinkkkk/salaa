@@ -36,6 +36,7 @@ Route::middleware('auth')->group(function () {
             Route::post('/create', 'Admin\PostController@create')->name('create');
             Route::post('/update/{post_id}', 'Admin\PostController@update')->name('update');
             Route::post('/delete/{post_id}', 'Admin\PostController@delete')->name('delete');
+            Route::post('/upload', 'Admin\PostController@upload')->name('upload');
         });
 
         Route::prefix('/category')->name('category.')->group(function () {

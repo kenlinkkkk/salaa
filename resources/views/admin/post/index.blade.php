@@ -36,7 +36,7 @@
                 <div class="card-body table-responsive">
                     <div class="d-flex justify-content-between">
                         <p>Tag</p>
-                        <a href="#" class="btn btn-sm btn-primary mb-2">Thêm mới</a>
+                        <a href="{{ route('admin.post.add') }}" class="btn btn-sm btn-primary mb-2">Thêm mới</a>
                     </div>
                     <table id="data-table" class="table table-hover dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                         <thead>
@@ -46,8 +46,10 @@
                             <th>Slug</th>
                             <th>Mô tả</th>
                             <th>Tác giả</th>
-                            <th>Lượt xem</th>
+                            <th class="text-right">Lượt xem</th>
                             <th class="text-right">Ngày tạo</th>
+                            <th class="text-right">Trạng thái</th>
+                            <th class="text-right">Action</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -57,9 +59,26 @@
                                     <td>{{ $item->title }}</td>
                                     <td>{{ $item->slug }}</td>
                                     <td>{{ $item->description }}</td>
-                                    <td>{{ $item->author }}</td>
-                                    <td>{{ $item->count }}</td>
+                                    <td>{{ $item->author_name->name }}</td>
+                                    <td class="text-right">{{ $item->view_count }}</td>
                                     <td class="text-right">{{ $item->created_at }}</td>
+                                    @if($item->status == 1)
+                                        <td><span class="badge badge-pill badge-success float-right">Active</span></td>
+                                    @else
+                                        <td><span class="badge badge-pill badge-danger float-right">Inactive</span></td>
+                                    @endif
+                                    <td class="text-right pt-1">
+                                        <form id="form-{{ $item->id }}" method="post" action="{{ route('admin.post.delete', [$item->id]) }}">
+                                            @csrf
+                                            <a href="{{ route('admin.post.edit', [$item->id]) }}" class="btn btn-success btn-sm">Sửa</a>
+                                            <input type="hidden" name="status" value="{{ $item->status == 1 ? 0 : 1 }}">
+                                            @if($item->status == 1)
+                                                <button type="submit" itemId="{{ $item->id }}" class="btn btn-danger btn-sm btn-delete">Deactive</button>
+                                            @else
+                                                <button type="submit" itemId="{{ $item->id }}" class="btn btn-success btn-sm btn-delete">Active</button>
+                                            @endif
+                                        </form>
+                                    </td>
                                 </tr>
                             @endforeach
                         </tbody>

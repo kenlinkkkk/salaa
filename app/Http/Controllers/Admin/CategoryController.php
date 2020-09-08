@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Repositories\Admin\CategoryEloquentRepository;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 use Throwable;
 
 class CategoryController extends Controller
@@ -30,15 +31,22 @@ class CategoryController extends Controller
         return view('admin.category.add', $data);
     }
 
-    public function edit()
+    public function edit($category_id)
     {
+        $category = $this->categoryEloquentRepository->find($category_id);
+        $categories = $this->categoryEloquentRepository->getAll();
+        $data = compact(
+            'category',
+            'categories'
+        );
 
+        return view('admin.category.edit', $data);
     }
 
     public function create(Request $request)
     {
         $data = $request->except('_token');
-        $data['slug'] = url_slug('Cộng hoà xã hội  chủ nghĩa Việt Nam');
+        $data['slug'] = url_slug($data['name']);
 
         if ($request->hasFile('picture')) {
             $picture = $request->picture;
@@ -47,7 +55,7 @@ class CategoryController extends Controller
 
             $picture_name = $picture->getClientOriginalName();
             $picture->move($filePath, $picture_name);
-            $data['picture'] = $filePath.'/'.$picture_name;
+            $data['picture'] = $filePath . '/' . $picture_name;
         }
 
         try {
@@ -59,19 +67,57 @@ class CategoryController extends Controller
                 $request->session()->flash('error', 'Thêm mới thất bại');
             }
 
-            return redirect(route('admin.page.index'));
+            return Redirect::route('admin.category.index');
         } catch (Throwable $exception) {
-            report($exception);
+            return report($exception);
         }
     }
 
     public function update(Request $request, $category_id)
     {
+        $data = $request->except('_token');
 
+        if ($request->hasFile('picture')) {
+            $picture = $request->picture;
+            $filePath = 'uploads/home';
+            $filePath = str_replace('\\', '/', $filePath);
+
+            $picture_name = $picture->getClientOriginalName();
+            $picture->move($filePath, $picture_name);
+            $data['picture'] = $filePath . '/' . $picture_name;
+        }
+
+        try {
+            $result = $this->categoryEloquentRepository->update($category_id, $data);
+
+            if ($result) {
+                $request->session()->flash('success', 'Thêm thành công');
+            } else {
+                $request->session()->flash('error', 'Thêm mới thất bại');
+            }
+
+            return Redirect::route('admin.category.index');
+        } catch (Throwable $exception) {
+            report($exception);
+        }
     }
 
-    public function delete()
+    public function delete(Request $request, $category_id)
     {
+        $data = $request->except('_token');
 
+        try {
+            $result = $this->categoryEloquentRepository->update($category_id, $data);
+
+            if ($result) {
+                $request->session()->flash('success', 'Thành công');
+            } else {
+                $request->session()->flash('error', 'Thất bại');
+            }
+
+            return Redirect::route('admin.category.index');
+        }catch (Throwable $exception) {
+            report($exception);
+        }
     }
 }

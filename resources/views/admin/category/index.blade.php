@@ -46,8 +46,9 @@
                             <th>Slug</th>
                             <th>Danh mục cha</th>
                             <th>Mô tả</th>
-                            <th>Trạng thái</th>
+                            <th class="text-right">Trạng thái</th>
                             <th class="text-right">Ngày tạo</th>
+                            <th class="text-right">Hành động</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -64,6 +65,18 @@
                                         <td><span class="badge badge-pill badge-danger float-right">Inactive</span></td>
                                     @endif
                                     <td class="text-right">{{ $item->created_at }}</td>
+                                    <td class="text-right pt-1">
+                                        <form id="form-{{ $item->id }}" method="post" action="{{ route('admin.category.delete', [$item->id]) }}">
+                                            @csrf
+                                            <a href="{{ route('admin.category.edit', [$item->id]) }}" class="btn btn-success btn-sm">Sửa</a>
+                                            <input type="hidden" name="status" value="{{ $item->status == 1 ? 0 : 1 }}">
+                                            @if($item->status == 1)
+                                                <button type="submit" itemId="{{ $item->id }}" class="btn btn-danger btn-sm btn-delete">Deactive</button>
+                                            @else
+                                                <button type="submit" itemId="{{ $item->id }}" class="btn btn-success btn-sm btn-delete">Active</button>
+                                            @endif
+                                        </form>
+                                    </td>
                                 </tr>
                             @endforeach
                         </tbody>
@@ -81,9 +94,38 @@
     <!-- Responsive examples -->
     <script src="{{ asset('assets/admin/libs/datatables.net-responsive/js/dataTables.responsive.min.js') }}"></script>
     <script src="{{ asset('assets/admin/libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js') }}"></script>
+
+    <script>
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        $("body").on("click", ".btn-delete", function(e){
+            e.preventDefault();
+            let id = $(this).attr('itemId');
+            swal.fire({
+                title: "Bạn có chắc không?",
+                text: "Bạn sẽ không thể khôi phục lại thông tin này khi đã xóa!",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonClass: "btn-danger",
+                confirmButtonText: "Đúng! Tôi chắc chắn!",
+                cancelButtonText: "Hủy",
+                closeOnConfirm: false
+            }).then((result) => {
+                if (result.value) {
+                    $('#form-' + id).submit();
+                }
+            });
+        });
+    </script>
+
     <script>
         $(document).ready(function () {
             $('#data-table').DataTable();
         });
     </script>
+
+
 @endsection
