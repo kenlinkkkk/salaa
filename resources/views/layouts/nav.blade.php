@@ -14,7 +14,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.html"><img src="{{ asset('assets/client/images/logo.png') }}" alt=""></a>
+                    <a class="navbar-brand" href="{{ route('home.index') }}"><img src="{{ asset('assets/client/images/logo.png') }}" alt=""></a>
                 </div>
             </div>
         </div>
@@ -26,10 +26,20 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-left">
-                        <li><a class="home" href="index.html">Trang chủ</a></li>
-                        <li><a class="home" href="news-category4.html">Kinh tế</a></li>
-                        <li><a class="home" href="news-category1.html">Thể thao</a></li>
-                        <li><a class="home" href="news-category5.html">Văn hóa giáo dục</a></li>
+                        <li><a class="home" href="{{ route('home.index') }}">Trang chủ</a></li>
+                        @foreach($categories as $item)
+                            @if(count($item->categories) > 0)
+                                <li class="drop"><a class="home" href="{{ route('home.category', [$item->slug]) }}">{{ $item->name }}</a>
+                                    <ul class="dropdown">
+                                        @foreach($item->categories as $sub_item)
+                                            <li><a href="{{ route('home.category', [$sub_item->slug]) }}">{{ $sub_item->name }}</a></li>
+                                        @endforeach
+                                    </ul>
+                                </li>
+                            @else
+                                <li><a class="home" href="{{ route('home.category', [$item->slug]) }}">{{ $item->name }}</a></li>
+                            @endif
+                        @endforeach
                     </ul>
                     <form class="navbar-form navbar-right" role="search">
                         <input type="text" id="search" name="search" placeholder="Search here">

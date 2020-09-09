@@ -14,10 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
-
 Auth::routes();
 
 Route::middleware('auth')->group(function () {
@@ -51,3 +47,7 @@ Route::middleware('auth')->group(function () {
     });
 });
 
+Route::prefix('/')->name('home.')->group(function () {
+    Route::get('/', 'Home\HomeController@index')->name('index');
+    Route::get('/{category}', 'Home\HomeController@showCategory')->name('category');
+});

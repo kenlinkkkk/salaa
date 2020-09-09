@@ -24,6 +24,7 @@
 <body>
     <div id="container">
         @include('layouts.nav')
+        @yield('heading-news')
         @include('layouts.breaking')
         @yield('content')
 
