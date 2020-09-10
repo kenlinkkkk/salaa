@@ -44,7 +44,6 @@
                             <th>ID</th>
                             <th>Tiêu đề</th>
                             <th>Slug</th>
-                            <th>Mô tả</th>
                             <th>Tác giả</th>
                             <th class="text-right">Lượt xem</th>
                             <th class="text-right">Ngày tạo</th>
@@ -58,7 +57,6 @@
                                     <td>{{ $item->id }}</td>
                                     <td>{{ $item->title }}</td>
                                     <td>{{ $item->slug }}</td>
-                                    <td>{{ $item->description }}</td>
                                     <td>{{ $item->author_name->name }}</td>
                                     <td class="text-right">{{ $item->view_count }}</td>
                                     <td class="text-right">{{ $item->created_at }}</td>

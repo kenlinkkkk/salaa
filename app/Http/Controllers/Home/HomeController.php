@@ -28,6 +28,12 @@ class HomeController extends Controller
         $categories = Category::where('status',  '=', 1)->where('fa_category', '=', 0)->with('categories')->get();
         $heading_news = Post::where('status', '=', 1)->where('created_at', '>=', $date)->with('category')->with('author_name')->orderBy('view_count', 'desc')->limit(12)->get();
 
+        $post_by_category = Category::where('status', '=', 1)->where('fa_category', '=', 0)->get()->filter(function ($category) {
+
+        });
+
+        dd($post_by_category);
+
         $data = compact(
             'breaking_news',
             'categories',

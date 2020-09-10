@@ -53,5 +53,5 @@ function url_slug($str, $options = array())
     // Remove delimiter from ends
     $str = trim($str, $options['delimiter']);
 
-    return $str;
+    return $str . '-'. round(microtime(true) * 1000);
 }
