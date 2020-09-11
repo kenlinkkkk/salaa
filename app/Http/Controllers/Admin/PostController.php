@@ -119,7 +119,7 @@ class PostController extends Controller
         $data = $request->except('_token');
 
         try {
-            $result = $this->categoryEloquentRepository->update($post_id, $data);
+            $result = $this->postEloquentRepository->update($post_id, $data);
 
             if ($result) {
                 $request->session()->flash('success', 'Thành công');
@@ -127,7 +127,7 @@ class PostController extends Controller
                 $request->session()->flash('error', 'Thất bại');
             }
 
-            return Redirect::route('admin.category.index');
+            return Redirect::route('admin.post.index');
         }catch (Throwable $exception) {
             report($exception);
         }

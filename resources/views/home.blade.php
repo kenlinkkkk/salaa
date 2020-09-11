@@ -15,7 +15,6 @@
                         <h2><a href="#">{{ $heading_news[0]->title }}</a></h2>
                         <ul class="post-tags">
                             <li><i class="fa fa-clock-o"></i><span>{{ date('d M Y', time($heading_news[0]->created_at)) }}</span></li>
-                            <li><a href="#"><i class="fa fa-comments-o"></i><span>23</span></a></li>
                         </ul>
                         <p>{{ $heading_news[0]->description }}</p>
                     </div>
@@ -35,7 +34,6 @@
                                     <ul class="post-tags">
                                         <li><i class="fa fa-clock-o"></i>{{ date('d M Y', time($heading_news[1]->created_at)) }}</li>
                                         <li><i class="fa fa-user"></i>by <a href="#">{{ $heading_news[1]->author_name->name }}</a></li>
-                                        <li><a href="#"><i class="fa fa-comments-o"></i><span>23</span></a></li>
                                         <li><i class="fa fa-eye"></i>{{ $heading_news[1]->view_count }}</li>
                                     </ul>
                                 </div>
@@ -52,7 +50,6 @@
                                     <ul class="post-tags">
                                         <li><i class="fa fa-clock-o"></i>{{ date('d M Y', time($heading_news[2]->created_at)) }}</li>
                                         <li><i class="fa fa-user"></i>by <a href="#">{{ $heading_news[2]->author_name->name }}</a></li>
-                                        <li><a href="#"><i class="fa fa-comments-o"></i><span>23</span></a></li>
                                         <li><i class="fa fa-eye"></i>{{ $heading_news[2]->view_count }}</li>
                                     </ul>
                                 </div>
@@ -69,7 +66,6 @@
                                     <ul class="post-tags">
                                         <li><i class="fa fa-clock-o"></i>{{ date('d M Y', time($heading_news[3]->created_at)) }}</li>
                                         <li><i class="fa fa-user"></i>by <a href="#">{{ $heading_news[3]->author_name->name }}</a></li>
-                                        <li><a href="#"><i class="fa fa-comments-o"></i><span>23</span></a></li>
                                         <li><i class="fa fa-eye"></i>{{ $heading_news[3]->view_count }}</li>
                                     </ul>
                                     <p>{{ $heading_news[3]->description }}</p>
@@ -87,7 +83,6 @@
                                     <ul class="post-tags">
                                         <li><i class="fa fa-clock-o"></i>{{ date('d M Y', time($heading_news[4]->created_at)) }}</li>
                                         <li><i class="fa fa-user"></i>by <a href="#">{{ $heading_news[4]->author_name->name }}</a></li>
-                                        <li><a href="#"><i class="fa fa-comments-o"></i><span>23</span></a></li>
                                         <li><i class="fa fa-eye"></i>{{ $heading_news[4]->view_count }}</li>
                                     </ul>
                                     <p>{{ $heading_news[4]->description }}</p>
@@ -106,7 +101,6 @@
                         <h2><a href="#">{{ $heading_news[5]->title }}</a></h2>
                         <ul class="post-tags">
                             <li><i class="fa fa-clock-o"></i><span>{{ date('d M Y', time($heading_news[5]->created_at)) }}</span></li>
-                            <li><a href="#"><i class="fa fa-comments-o"></i><span>20</span></a></li>
                         </ul>
                         <p>{{ $heading_news[5]->description }}</p>
                     </div>
@@ -121,7 +115,6 @@
                         <h2><a href="#">{{ $heading_news[6]->title }}</a></h2>
                         <ul class="post-tags">
                             <li><i class="fa fa-clock-o"></i><span>{{ date('d M Y', time($heading_news[6]->created_at)) }}</span></li>
-                            <li><a href="#"><i class="fa fa-comments-o"></i><span>23</span></a></li>
                         </ul>
                         <p>{{ $heading_news[6]->description }}</p>
                     </div>
@@ -135,8 +128,7 @@
                         <a class="category-post world" href="{{ route('home.category', [$heading_news[7]->category->slug]) }}">{{ $heading_news[7]->category->name }}</a>
                         <h2><a href="#"{{ $heading_news[7]->title }}</a></h2>
                         <ul class="post-tags">
-                            <li><i class="fa fa-clock-o"></i><span>27 may 2013</span></li>
-                            <li><a href="#"><i class="fa fa-comments-o"></i><span>23</span></a></li>
+                            <li><i class="fa fa-clock-o"></i><span>{{ date('d M Y', time($heading_news[7]->created_at)) }}</span></li>
                         </ul>
                         <p>{{ $heading_news[7]->description }}</p>
                     </div>
@@ -151,7 +143,6 @@
                         <h2><a href="#">{{ $heading_news[8]->title }}</a></h2>
                         <ul class="post-tags">
                             <li><i class="fa fa-clock-o"></i><span>{{ date('d M Y', time($heading_news[8]->created_at)) }}</span></li>
-                            <li><a href="#"><i class="fa fa-comments-o"></i><span>23</span></a></li>
                         </ul>
                         <p>{{ $heading_news[8]->description }}</p>
                     </div>
@@ -166,7 +157,6 @@
                         <h2><a href="#">{{ $heading_news[9]->title }}</a></h2>
                         <ul class="post-tags">
                             <li><i class="fa fa-clock-o"></i><span>{{ date('d M Y', time($heading_news[9]->created_at)) }}</span></li>
-                            <li><a href="#"><i class="fa fa-comments-o"></i><span>23</span></a></li>
                         </ul>
                         <p>{{ $heading_news[9]->description }}</p>
                     </div>
@@ -181,7 +171,6 @@
                         <h2><a href="#">{{ $heading_news[10]->title }}</a></h2>
                         <ul class="post-tags">
                             <li><i class="fa fa-clock-o"></i><span>{{ date('d M Y', time($heading_news[10]->created_at)) }}</span></li>
-                            <li><a href="#"><i class="fa fa-comments-o"></i><span>23</span></a></li>
                         </ul>
                         <p>{{ $heading_news[10]->description }}</p>
                     </div>
@@ -196,7 +185,6 @@
                         <h2><a href="#">{{ $heading_news[11]->title }}</a></h2>
                         <ul class="post-tags">
                             <li><i class="fa fa-clock-o"></i><span>{{ date('d M Y', time($heading_news[11]->created_at)) }}</span></li>
-                            <li><a href="#"><i class="fa fa-comments-o"></i><span>20</span></a></li>
                         </ul>
                         <p>{{ $heading_news[11]->description }}</p>
                     </div>
@@ -227,9 +215,8 @@
                             <div class="post-content">
                                 <h2><a href="#">{{ $item->title }}</a></h2>
                                 <ul class="post-tags">
-                                    <li><i class="fa fa-clock-o"></i>27 may 2013</li>
+                                    <li><i class="fa fa-clock-o"></i>{{ date('d M Y', time($item->created_at)) }}</li>
                                     <li><i class="fa fa-user"></i>by <a href="#">{{ $item->author_name->name }}</a></li>
-                                    <li><a href="#"><i class="fa fa-comments-o"></i><span>23</span></a></li>
                                 </ul>
                             </div>
                         </div>
@@ -246,33 +233,37 @@
 
                     <!-- block content -->
                     <div class="block-content">
-
+                        @foreach($categories as $category)
                         <!-- carousel box -->
+                        @if($loop->index == 0)
                         <div class="carousel-box owl-wrapper">
 
                             <div class="title-section">
-                                <h1><span class="world">Kinh tế</span></h1>
+                                <h1><span class="world">{{ $category->name }}</span></h1>
                             </div>
 
                             <div class="owl-carousel" data-num="2">
 
                                 <div class="item">
-                                    <div class="news-post image-post2">
-                                        <div class="post-gallery">
-                                            <img src="upload/news-posts/im1.jpg" alt="">
-                                            <div class="hover-box">
-                                                <div class="inner-hover">
-                                                    <h2><a href="single-post.html">Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. </a></h2>
-                                                    <ul class="post-tags">
-                                                        <li><i class="fa fa-clock-o"></i>27 may 2013</li>
-                                                        <li><i class="fa fa-user"></i>by <a href="#">John Doe</a></li>
-                                                        <li><a href="#"><i class="fa fa-comments-o"></i><span>23</span></a></li>
-                                                        <li><i class="fa fa-eye"></i>872</li>
-                                                    </ul>
+                                    @foreach($category['posts'] as $item)
+                                        @if ($loop->index == 0)
+                                            <div class="news-post image-post2">
+                                                <div class="post-gallery">
+                                                    <img src="{{ asset($item['picture']) }}" alt="">
+                                                    <div class="hover-box">
+                                                        <div class="inner-hover">
+                                                            <h2><a href="#">{{ $item['title'] }}</a></h2>
+                                                            <ul class="post-tags">
+                                                                <li><i class="fa fa-clock-o"></i>{{ date('d M Y', time($item['created_at'])) }}</li>
+                                                                <li><i class="fa fa-user"></i>by <a href="#">{{ $item['author'] }}</a></li>
+                                                                <li><i class="fa fa-eye"></i>{{ $item['view_count'] }}</li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </div>
+                                        @endif
+                                    @endforeach
 
                                     <ul class="list-posts">
                                         <li>
@@ -413,7 +404,7 @@
 
                         </div>
                         <!-- End carousel box -->
-
+                        @endif
                         <!-- grid box -->
                         <div class="grid-box">
                             <div class="row">
@@ -584,6 +575,7 @@
                             </div>
                         </div>
                         <!-- End grid box -->
+                        @endforeach
                     </div>
                     <!-- End block content -->
 

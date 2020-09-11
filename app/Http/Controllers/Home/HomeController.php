@@ -28,11 +28,17 @@ class HomeController extends Controller
         $categories = Category::where('status',  '=', 1)->where('fa_category', '=', 0)->with('categories')->get();
         $heading_news = Post::where('status', '=', 1)->where('created_at', '>=', $date)->with('category')->with('author_name')->orderBy('view_count', 'desc')->limit(12)->get();
 
-        $post_by_category = Category::where('status', '=', 1)->where('fa_category', '=', 0)->get()->filter(function ($category) {
 
-        });
-
-        dd($post_by_category);
+        foreach ($categories as $category) {
+            $posts = Post::where('category_id', '=', $category->id)->where('status', '=', 1)->with('category')->with('author_name')->get()->toArray();
+            if (count($category->categories) > 0) {
+                foreach ($category->categories as $item) {
+                    $sub_posts = Post::where('category_id', '=', $item->id)->where('status', '=', 1)->with('category')->with('author_name')->limit(12)->get()->toArray();
+                    $posts = array_merge($posts, $sub_posts);
+                }
+            }
+            $category['posts'] = $posts;
+        }
 
         $data = compact(
             'breaking_news',

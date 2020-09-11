@@ -95,6 +95,31 @@
     <script src="{{ asset('assets/admin/libs/datatables.net-responsive/js/dataTables.responsive.min.js') }}"></script>
     <script src="{{ asset('assets/admin/libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js') }}"></script>
     <script>
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        $("body").on("click", ".btn-delete", function(e){
+            e.preventDefault();
+            let id = $(this).attr('itemId');
+            swal.fire({
+                title: "Bạn có chắc không?",
+                text: "Bạn sẽ không thể khôi phục lại thông tin này khi đã xóa!",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonClass: "btn-danger",
+                confirmButtonText: "Đúng! Tôi chắc chắn!",
+                cancelButtonText: "Hủy",
+                closeOnConfirm: false
+            }).then((result) => {
+                if (result.value) {
+                    $('#form-' + id).submit();
+                }
+            });
+        });
+    </script>
+    <script>
         $(document).ready(function () {
             $('#data-table').DataTable();
         });
