@@ -49,5 +49,8 @@ Route::middleware('auth')->group(function () {
 
 Route::prefix('/')->name('home.')->group(function () {
     Route::get('/', 'Home\HomeController@index')->name('index');
-    Route::get('/{category}', 'Home\HomeController@showCategory')->name('category');
+    Route::prefix('/{category}')->name('category.')->group(function () {
+        Route::get('/', 'Home\HomeController@showCategory')->name('index');
+        Route::get('/{post_slug}', 'Home\HomeController@viewPost')->name('post');
+    });
 });

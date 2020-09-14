@@ -29,15 +29,15 @@
                         <li><a class="home" href="{{ route('home.index') }}">Trang chủ</a></li>
                         @foreach($categories as $item)
                             @if(count($item->categories) > 0)
-                                <li class="drop"><a class="home" href="{{ route('home.category', [$item->slug]) }}">{{ $item->name }}</a>
+                                <li class="drop"><a class="home" href="{{ route('home.category.index', [$item->slug]) }}">{{ $item->name }}</a>
                                     <ul class="dropdown">
                                         @foreach($item->categories as $sub_item)
-                                            <li><a href="{{ route('home.category', [$sub_item->slug]) }}">{{ $sub_item->name }}</a></li>
+                                            <li><a href="{{ route('home.category.index', [$sub_item->slug]) }}">{{ $sub_item->name }}</a></li>
                                         @endforeach
                                     </ul>
                                 </li>
                             @else
-                                <li><a class="home" href="{{ route('home.category', [$item->slug]) }}">{{ $item->name }}</a></li>
+                                <li><a class="home" href="{{ route('home.category.index', [$item->slug]) }}">{{ $item->name }}</a></li>
                             @endif
                         @endforeach
                     </ul>

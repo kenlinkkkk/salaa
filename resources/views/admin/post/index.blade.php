@@ -45,6 +45,7 @@
                             <th>Tiêu đề</th>
                             <th>Slug</th>
                             <th>Tác giả</th>
+                            <th>Chuyên mục</th>
                             <th class="text-right">Lượt xem</th>
                             <th class="text-right">Ngày tạo</th>
                             <th class="text-right">Trạng thái</th>
@@ -58,6 +59,7 @@
                                     <td>{{ $item->title }}</td>
                                     <td>{{ $item->slug }}</td>
                                     <td>{{ $item->author_name->name }}</td>
+                                    <td>{{ $item->category->name }}</td>
                                     <td class="text-right">{{ $item->view_count }}</td>
                                     <td class="text-right">{{ $item->created_at }}</td>
                                     @if($item->status == 1)

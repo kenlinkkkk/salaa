@@ -11,8 +11,8 @@
                 <img src="{{ asset($heading_news[0]->picture) }}" alt="">
                 <div class="hover-box">
                     <div class="inner-hover">
-                        <a class="category-post world" href="{{ route('home.category', [$heading_news[0]->category->slug]) }}">{{ $heading_news[0]->category->name }}</a>
-                        <h2><a href="#">{{ $heading_news[0]->title }}</a></h2>
+                        <a class="category-post world" href="{{ route('home.category.index', [$heading_news[0]->category->slug]) }}">{{ $heading_news[0]->category->name }}</a>
+                        <h2><a href="{{ route('home.category.post', [$heading_news[0]->category->slug, $heading_news[0]->slug]) }}">{{ $heading_news[0]->title }}</a></h2>
                         <ul class="post-tags">
                             <li><i class="fa fa-clock-o"></i><span>{{ date('d M Y', time($heading_news[0]->created_at)) }}</span></li>
                         </ul>
@@ -29,8 +29,8 @@
                             <img src="{{ asset($heading_news[1]->picture) }}" alt="">
                             <div class="hover-box">
                                 <div class="inner-hover">
-                                    <a class="category-post world" href="{{ route('home.category', [$heading_news[1]->category->slug]) }}">{{ $heading_news[1]->category->name }}</a>
-                                    <h2><a href="#">{{ $heading_news[1]->title }}</a></h2>
+                                    <a class="category-post world" href="{{ route('home.category.index', [$heading_news[1]->category->slug]) }}">{{ $heading_news[1]->category->name }}</a>
+                                    <h2><a href="{{ route('home.category.post', [$heading_news[1]->category->slug, $heading_news[1]->slug]) }}">{{ $heading_news[1]->title }}</a></h2>
                                     <ul class="post-tags">
                                         <li><i class="fa fa-clock-o"></i>{{ date('d M Y', time($heading_news[1]->created_at)) }}</li>
                                         <li><i class="fa fa-user"></i>by <a href="#">{{ $heading_news[1]->author_name->name }}</a></li>
@@ -45,8 +45,8 @@
                             <img src="{{ asset($heading_news[2]->picture) }}" alt="">
                             <div class="hover-box">
                                 <div class="inner-hover">
-                                    <a class="category-post world" href="{{ route('home.category', [$heading_news[2]->category->slug]) }}">{{ $heading_news[2]->category->name }}</a>
-                                    <h2><a href="#">{{ $heading_news[2]->title }}</a></h2>
+                                    <a class="category-post world" href="{{ route('home.category.index', [$heading_news[2]->category->slug]) }}">{{ $heading_news[2]->category->name }}</a>
+                                    <h2><a href="{{ route('home.category.post', [$heading_news[2]->category->slug, $heading_news[2]->slug]) }}">{{ $heading_news[2]->title }}</a></h2>
                                     <ul class="post-tags">
                                         <li><i class="fa fa-clock-o"></i>{{ date('d M Y', time($heading_news[2]->created_at)) }}</li>
                                         <li><i class="fa fa-user"></i>by <a href="#">{{ $heading_news[2]->author_name->name }}</a></li>
@@ -61,8 +61,8 @@
                             <img src="{{ asset($heading_news[3]->picture) }}" alt="">
                             <div class="hover-box">
                                 <div class="inner-hover">
-                                    <a class="category-post world" href="{{ route('home.category', [$heading_news[3]->category->slug]) }}">{{ $heading_news[3]->category->name }}</a>
-                                    <h2><a href="#">{{ $heading_news[3]->title }}</a></h2>
+                                    <a class="category-post world" href="{{ route('home.category.index', [$heading_news[3]->category->slug]) }}">{{ $heading_news[3]->category->name }}</a>
+                                    <h2><a href="{{ route('home.category.post', [$heading_news[3]->category->slug, $heading_news[3]->slug]) }}">{{ $heading_news[3]->title }}</a></h2>
                                     <ul class="post-tags">
                                         <li><i class="fa fa-clock-o"></i>{{ date('d M Y', time($heading_news[3]->created_at)) }}</li>
                                         <li><i class="fa fa-user"></i>by <a href="#">{{ $heading_news[3]->author_name->name }}</a></li>
@@ -78,8 +78,8 @@
                             <img src="{{ asset($heading_news[4]->picture) }}" alt="">
                             <div class="hover-box">
                                 <div class="inner-hover">
-                                    <a class="category-post world" href="{{ route('home.category', [$heading_news[4]->category->slug]) }}">{{ $heading_news[4]->category->name }}</a>
-                                    <h2><a href="#">{{ $heading_news[4]->title }}</a></h2>
+                                    <a class="category-post world" href="{{ route('home.category.index', [$heading_news[4]->category->slug]) }}">{{ $heading_news[4]->category->name }}</a>
+                                    <h2><a href="{{ route('home.category.post', [$heading_news[4]->category->slug, $heading_news[4]->slug]) }}">{{ $heading_news[4]->title }}</a></h2>
                                     <ul class="post-tags">
                                         <li><i class="fa fa-clock-o"></i>{{ date('d M Y', time($heading_news[4]->created_at)) }}</li>
                                         <li><i class="fa fa-user"></i>by <a href="#">{{ $heading_news[4]->author_name->name }}</a></li>
@@ -97,8 +97,8 @@
                 <img src="{{ asset($heading_news[5]->picture) }}" alt="">
                 <div class="hover-box">
                     <div class="inner-hover">
-                        <a class="category-post world" href="{{ route('home.category', [$heading_news[5]->category->slug]) }}">{{ $heading_news[5]->category->name }}</a>
-                        <h2><a href="#">{{ $heading_news[5]->title }}</a></h2>
+                        <a class="category-post world" href="{{ route('home.category.index', [$heading_news[5]->category->slug]) }}">{{ $heading_news[5]->category->name }}</a>
+                        <h2><a href="{{ route('home.category.post', [$heading_news[5]->category->slug, $heading_news[5]->slug]) }}">{{ $heading_news[5]->title }}</a></h2>
                         <ul class="post-tags">
                             <li><i class="fa fa-clock-o"></i><span>{{ date('d M Y', time($heading_news[5]->created_at)) }}</span></li>
                         </ul>
@@ -111,8 +111,8 @@
                 <img src="{{ asset($heading_news[6]->picture) }}" alt="">
                 <div class="hover-box">
                     <div class="inner-hover">
-                        <a class="category-post world" href="{{ route('home.category', [$heading_news[6]->category->slug]) }}">{{ $heading_news[6]->category->name }}</a>
-                        <h2><a href="#">{{ $heading_news[6]->title }}</a></h2>
+                        <a class="category-post world" href="{{ route('home.category.index', [$heading_news[6]->category->slug]) }}">{{ $heading_news[6]->category->name }}</a>
+                        <h2><a href="{{ route('home.category.post', [$heading_news[6]->category->slug, $heading_news[6]->slug]) }}">{{ $heading_news[6]->title }}</a></h2>
                         <ul class="post-tags">
                             <li><i class="fa fa-clock-o"></i><span>{{ date('d M Y', time($heading_news[6]->created_at)) }}</span></li>
                         </ul>
@@ -125,8 +125,8 @@
                 <img src="{{ asset($heading_news[7]->picture) }}" alt="">
                 <div class="hover-box">
                     <div class="inner-hover">
-                        <a class="category-post world" href="{{ route('home.category', [$heading_news[7]->category->slug]) }}">{{ $heading_news[7]->category->name }}</a>
-                        <h2><a href="#"{{ $heading_news[7]->title }}</a></h2>
+                        <a class="category-post world" href="{{ route('home.category.index', [$heading_news[7]->category->slug]) }}">{{ $heading_news[7]->category->name }}</a>
+                        <h2><a href="{{ route('home.category.post', [$heading_news[7]->category->slug, $heading_news[7]->slug]) }}"{{ $heading_news[7]->title }}</a></h2>
                         <ul class="post-tags">
                             <li><i class="fa fa-clock-o"></i><span>{{ date('d M Y', time($heading_news[7]->created_at)) }}</span></li>
                         </ul>
@@ -139,8 +139,8 @@
                 <img src="{{ asset($heading_news[8]->picture) }}" alt="">
                 <div class="hover-box">
                     <div class="inner-hover">
-                        <a class="category-post world" href="{{ route('home.category', [$heading_news[8]->category->slug]) }}">{{ $heading_news[8]->category->name }}</a>
-                        <h2><a href="#">{{ $heading_news[8]->title }}</a></h2>
+                        <a class="category-post world" href="{{ route('home.category.index', [$heading_news[8]->category->slug]) }}">{{ $heading_news[8]->category->name }}</a>
+                        <h2><a href="{{ route('home.category.post', [$heading_news[8]->category->slug, $heading_news[8]->slug]) }}">{{ $heading_news[8]->title }}</a></h2>
                         <ul class="post-tags">
                             <li><i class="fa fa-clock-o"></i><span>{{ date('d M Y', time($heading_news[8]->created_at)) }}</span></li>
                         </ul>
@@ -153,8 +153,8 @@
                 <img src="{{ asset($heading_news[9]->picture) }}" alt="">
                 <div class="hover-box">
                     <div class="inner-hover">
-                        <a class="category-post world" href="{{ route('home.category', [$heading_news[9]->category->slug]) }}">{{ $heading_news[9]->category->name }}</a>
-                        <h2><a href="#">{{ $heading_news[9]->title }}</a></h2>
+                        <a class="category-post world" href="{{ route('home.category.index', [$heading_news[9]->category->slug]) }}">{{ $heading_news[9]->category->name }}</a>
+                        <h2><a href="{{ route('home.category.post', [$heading_news[9]->category->slug, $heading_news[9]->slug]) }}">{{ $heading_news[9]->title }}</a></h2>
                         <ul class="post-tags">
                             <li><i class="fa fa-clock-o"></i><span>{{ date('d M Y', time($heading_news[9]->created_at)) }}</span></li>
                         </ul>
@@ -167,8 +167,8 @@
                 <img src="{{ asset($heading_news[10]->picture) }}" alt="">
                 <div class="hover-box">
                     <div class="inner-hover">
-                        <a class="category-post world" href="{{ route('home.category', [$heading_news[10]->category->slug]) }}">{{ $heading_news[10]->category->name }}</a>
-                        <h2><a href="#">{{ $heading_news[10]->title }}</a></h2>
+                        <a class="category-post world" href="{{ route('home.category.index', [$heading_news[10]->category->slug]) }}">{{ $heading_news[10]->category->name }}</a>
+                        <h2><a href="{{ route('home.category.post', [$heading_news[10]->category->slug, $heading_news[10]->slug]) }}">{{ $heading_news[10]->title }}</a></h2>
                         <ul class="post-tags">
                             <li><i class="fa fa-clock-o"></i><span>{{ date('d M Y', time($heading_news[10]->created_at)) }}</span></li>
                         </ul>
@@ -181,8 +181,8 @@
                 <img src="{{ asset($heading_news[11]->picture) }}" alt="">
                 <div class="hover-box">
                     <div class="inner-hover">
-                        <a class="category-post world" href="{{ route('home.category', [$heading_news[11]->category->slug]) }}">{{ $heading_news[11]->category->name }}</a>
-                        <h2><a href="#">{{ $heading_news[11]->title }}</a></h2>
+                        <a class="category-post world" href="{{ route('home.category.index', [$heading_news[11]->category->slug]) }}">{{ $heading_news[11]->category->name }}</a>
+                        <h2><a href="{{ route('home.category.post', [$heading_news[11]->category->slug, $heading_news[11]->slug]) }}">{{ $heading_news[11]->title }}</a></h2>
                         <ul class="post-tags">
                             <li><i class="fa fa-clock-o"></i><span>{{ date('d M Y', time($heading_news[11]->created_at)) }}</span></li>
                         </ul>
@@ -210,10 +210,10 @@
                         <div class="item news-post standard-post">
                             <div class="post-gallery">
                                 <img src="{{ asset($item->picture) }}" alt="">
-                                <a class="category-post world" href="{{ route('home.category', [$item->category->slug]) }}">{{ $item->category->name }}</a>
+                                <a class="category-post world" href="{{ route('home.category.index', [$item->category->slug]) }}">{{ $item->category->name }}</a>
                             </div>
                             <div class="post-content">
-                                <h2><a href="#">{{ $item->title }}</a></h2>
+                                <h2><a href="{{ route('home.category.post',[$item->category->slug, $item->slug]) }}">{{ $item->title }}</a></h2>
                                 <ul class="post-tags">
                                     <li><i class="fa fa-clock-o"></i>{{ date('d M Y', time($item->created_at)) }}</li>
                                     <li><i class="fa fa-user"></i>by <a href="#">{{ $item->author_name->name }}</a></li>
@@ -229,196 +229,165 @@
     <section class="block-wrapper">
         <div class="container">
             <div class="row">
-                <div class="col-sm-8">
+                <div class="col-sm-12">
 
                     <!-- block content -->
                     <div class="block-content">
-                        @foreach($categories as $category)
+                    @foreach($categories as $category)
                         <!-- carousel box -->
-                        @if($loop->index == 0)
-                            <div class="carousel-box owl-wrapper">
+                        <div class="carousel-box owl-wrapper">
+                            @if ($loop->index == 0)
+                                <div class="title-section">
+                                    <h1><span class="world">{{ $category->name }}</span></h1>
+                                </div>
 
-                            <div class="title-section">
-                                <h1><span class="world">{{ $category->name }}</span></h1>
-                            </div>
-
-                            <div class="owl-carousel" data-num="2">
-                                @foreach($category->posts as $post)
-                                    @if($loop->index  % 4 == 0)
+                                <div class="owl-carousel" data-num="2">
+                                    @for($i = 0; $i < sizeof($category['posts']) - 5 ; $i = $i + 4)
                                         <div class="item">
-                                            @foreach($category['posts'] as $item)
-                                                @if ($loop->index == 0)
-                                                    <div class="news-post image-post2">
-                                                        <div class="post-gallery">
-                                                            <img src="{{ asset($item['picture']) }}" alt="">
-                                                            <div class="hover-box">
-                                                                <div class="inner-hover">
-                                                                    <h2><a href="#">{{ $item['title'] }}</a></h2>
-                                                                    <ul class="post-tags">
-                                                                        <li><i class="fa fa-clock-o"></i>{{ date('d M Y', time($item['created_at'])) }}</li>
-                                                                        <li><i class="fa fa-user"></i>by <a href="#">{{ $item['author_name']['name'] }}</a></li>
-                                                                        <li><i class="fa fa-eye"></i>{{ $item['view_count'] }}</li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
+                                            <div class="news-post image-post2">
+                                                <div class="post-gallery">
+                                                    <img src="{{ asset($category['posts'][$i]['picture']) }}" alt="">
+                                                    <div class="hover-box">
+                                                        <div class="inner-hover">
+                                                            <h2><a href="{{ route('home.category.post',[$category['posts'][$i]['category']['slug'], $category['posts'][$i]['slug']]) }}">{{$category['posts'][$i]['title'] }}</a></h2>
+                                                            <ul class="post-tags">
+                                                                <li><i class="fa fa-clock-o"></i>{{ date('d M Y', time($category['posts'][$i]['created_at'])) }}</li>
+                                                                <li><i class="fa fa-user"></i>by <a href="#">{{$category['posts'][$i]['author_name']['name'] }}</a></li>
+                                                                <li><i class="fa fa-eye"></i>{{ $category['posts'][$i]['view_count'] }}</li>
+                                                            </ul>
                                                         </div>
                                                     </div>
-                                                @endif
-                                            @endforeach
+                                                </div>
+                                            </div>
                                             <ul class="list-posts">
                                                 <li>
-                                                    <img src="upload/news-posts/list1.jpg" alt="">
+                                                    <img src="{{ asset($category['posts'][$i+1]['picture']) }}" alt="">
                                                     <div class="post-content">
-                                                        <h2><a href="single-post.html">Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. </a></h2>
+                                                        <h2><a href="{{ route('home.category.post',[$category['posts'][$i+1]['category']['slug'], $category['posts'][$i+1]['slug']]) }}">{{$category['posts'][$i+1]['title'] }}</a></h2>
                                                         <ul class="post-tags">
-                                                            <li><i class="fa fa-clock-o"></i>27 may 2013</li>
+                                                            <li><i class="fa fa-clock-o"></i>{{ date('d M Y', time($category['posts'][$i+1]['created_at'])) }}</li>
                                                         </ul>
                                                     </div>
                                                 </li>
 
                                                 <li>
-                                                    <img src="upload/news-posts/list2.jpg" alt="">
+                                                    <img src="{{ asset($category['posts'][$i+2]['picture']) }}" alt="">
                                                     <div class="post-content">
-                                                        <h2><a href="single-post.html">Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. </a></h2>
+                                                        <h2><a href="{{ route('home.category.post',[$category['posts'][$i+2]['category']['slug'], $category['posts'][$i+2]['slug']]) }}">{{$category['posts'][$i+2]['title'] }}</a></h2>
                                                         <ul class="post-tags">
-                                                            <li><i class="fa fa-clock-o"></i>27 may 2013</li>
+                                                            <li><i class="fa fa-clock-o"></i>{{ date('d M Y', time($category['posts'][$i+2]['created_at'])) }}</li>
                                                         </ul>
                                                     </div>
                                                 </li>
 
                                                 <li>
-                                                    <img src="upload/news-posts/list3.jpg" alt="">
+                                                    <img src="{{ asset($category['posts'][$i+3]['picture']) }}" alt="">
                                                     <div class="post-content">
-                                                        <h2><a href="single-post.html">Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. </a></h2>
+                                                        <h2><a href="{{ route('home.category.post',[$category['posts'][$i+3]['category']['slug'], $category['posts'][$i+3]['slug']]) }}">{{$category['posts'][$i+3]['title'] }}</a></h2>
                                                         <ul class="post-tags">
-                                                            <li><i class="fa fa-clock-o"></i>27 may 2013</li>
+                                                            <li><i class="fa fa-clock-o"></i>{{ date('d M Y', time($category['posts'][$i+3]['created_at'])) }}</li>
                                                         </ul>
                                                     </div>
                                                 </li>
                                             </ul>
                                         </div>
-                                    @endif
-                                @endforeach
-                            </div>
+                                    @endfor
+                                </div>
+                            @else
                         </div>
                         <!-- End carousel box -->
-                        @else
+
                         <!-- grid box -->
-                            <div class="grid-box">
-                                <div class="row">
-                                    @if ($loop->index == 1)
-                                        <div class="col-md-6">
-                                            <div class="title-section">
-                                                <h1><span class="fashion">{{ $category->name }}</span></h1>
-                                            </div>
-                                            <div class="image-post-slider">
-                                                <ul class="bxslider">
-                                                    @foreach($category->posts as $item)
-                                                        <li>
-                                                            <div class="news-post image-post2">
-                                                                <div class="post-gallery">
-                                                                    <img src="{{ $item['picture'] }}" alt="">
-                                                                    <div class="hover-box">
-                                                                        <div class="inner-hover">
-                                                                            <h2><a href="#">{{ $item['title'] }}</a></h2>
-                                                                            <ul class="post-tags">
-                                                                                <li><i class="fa fa-clock-o"></i>{{ date('d M Y', time($item['created_at'])) }}</li>
-                                                                                <li><i class="fa fa-user"></i>by <a href="#">{{ $item['author_name']['name'] }}</a></li>
-                                                                                <li><i class="fa fa-eye"></i>{{ $item['view_count'] }}</li>
-                                                                            </ul>
-                                                                        </div>
+                        <div class="grid-box">
+                            @if($loop->index == 1)
+                                <div class="col-md-6">
+                                    <div class="title-section">
+                                        <h1><span class="fashion">{{ $category->name }}</span></h1>
+                                    </div>
+                                    <div class="image-post-slider">
+                                        <ul class="bxslider">
+                                            @foreach($category['posts'] as $item)
+                                                @if($loop->index <= 4)
+                                                    <li>
+                                                        <div class="news-post image-post2">
+                                                            <div class="post-gallery">
+                                                                <img src="{{ asset($item['picture']) }}" alt="">
+                                                                <div class="hover-box">
+                                                                    <div class="inner-hover">
+                                                                        <h2><a href="{{ route('home.category.post', [$item['category']['slug'], $item['slug']]) }}">{{ $item['title'] }}</a></h2>
+                                                                        <ul class="post-tags">
+                                                                            <li><i class="fa fa-clock-o"></i>{{ date('d M Y', time($item['created_at'])) }}</li>
+                                                                            <li><i class="fa fa-user"></i>by <a href="#">{{ $item['author_name']['name'] }}</a></li>
+                                                                            <li><i class="fa fa-eye"></i>{{ $item['view_count'] }}</li>
+                                                                        </ul>
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                        </li>
-                                                    @endforeach
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    @elseif ($loop->index == 2)
-                                        <div class="col-md-6">
-                                            <div class="title-section">
-                                                <h1><span class="world">{{ $category->name }}</span></h1>
-                                            </div>
-
-                                            <div class="owl-wrapper">
-                                                <div class="owl-carousel" data-num="1">
-
-                                                    <div class="item">
-                                                        <ul class="list-posts">
-                                                            <li>
-                                                                <img src="upload/news-posts/list7.jpg" alt="">
-                                                                <div class="post-content">
-                                                                    <h2><a href="single-post.html">Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. </a></h2>
-                                                                    <ul class="post-tags">
-                                                                        <li><i class="fa fa-clock-o"></i>27 may 2013</li>
-                                                                    </ul>
-                                                                </div>
-                                                            </li>
-
-                                                            <li>
-                                                                <img src="upload/news-posts/list8.jpg" alt="">
-                                                                <div class="post-content">
-                                                                    <h2><a href="single-post.html">Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. </a></h2>
-                                                                    <ul class="post-tags">
-                                                                        <li><i class="fa fa-clock-o"></i>27 may 2013</li>
-                                                                    </ul>
-                                                                </div>
-                                                            </li>
-
-                                                            <li>
-                                                                <img src="upload/news-posts/list9.jpg" alt="">
-                                                                <div class="post-content">
-                                                                    <h2><a href="single-post.html">Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. </a></h2>
-                                                                    <ul class="post-tags">
-                                                                        <li><i class="fa fa-clock-o"></i>27 may 2013</li>
-                                                                    </ul>
-                                                                </div>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-
-                                                    <div class="item">
-                                                        <ul class="list-posts">
-                                                            <li>
-                                                                <img src="upload/news-posts/list2.jpg" alt="">
-                                                                <div class="post-content">
-                                                                    <h2><a href="single-post.html">Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. </a></h2>
-                                                                    <ul class="post-tags">
-                                                                        <li><i class="fa fa-clock-o"></i>27 may 2013</li>
-                                                                    </ul>
-                                                                </div>
-                                                            </li>
-
-                                                            <li>
-                                                                <img src="upload/news-posts/list6.jpg" alt="">
-                                                                <div class="post-content">
-                                                                    <h2><a href="single-post.html">Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. </a></h2>
-                                                                    <ul class="post-tags">
-                                                                        <li><i class="fa fa-clock-o"></i>27 may 2013</li>
-                                                                    </ul>
-                                                                </div>
-                                                            </li>
-
-                                                            <li>
-                                                                <img src="upload/news-posts/list1.jpg" alt="">
-                                                                <div class="post-content">
-                                                                    <h2><a href="single-post.html">Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. </a></h2>
-                                                                    <ul class="post-tags">
-                                                                        <li><i class="fa fa-clock-o"></i>27 may 2013</li>
-                                                                    </ul>
-                                                                </div>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    @endif
+                                                        </div>
+                                                    </li>
+                                                @endif
+                                            @endforeach
+                                        </ul>
+                                    </div>
                                 </div>
-                            </div>
+                            @elseif($loop->index == 2)
+                                <div class="col-md-6">
+                                    <div class="title-section">
+                                        <h1><span class="world">{{ $category->name }}</span></h1>
+                                    </div>
+
+                                    <div class="owl-wrapper">
+                                        <div class="owl-carousel" data-num="1">
+                                            @for($i = 0; $i < sizeof($category['posts']); $i = $i + 4)
+                                                <div class="item">
+                                                    <ul class="list-posts">
+                                                        <li>
+                                                            <img src="{{ $category['posts'][$i]['picture'] }}" alt="">
+                                                            <div class="post-content">
+                                                                <h2><a href="{{ route('home.category.post', [$category['posts'][$i]['category']['slug'], $category['posts'][$i]['slug']]) }}">{{ $category['posts'][$i]['title'] }}</a></h2>
+                                                                <ul class="post-tags">
+                                                                    <li><i class="fa fa-clock-o"></i>{{ date('d M Y', time($category['posts'][$i]['created_at'])) }}</li>
+                                                                </ul>
+                                                            </div>
+                                                        </li>
+
+                                                        <li>
+                                                            <img src="{{ $category['posts'][$i+1]['picture'] }}" alt="">
+                                                            <div class="post-content">
+                                                                <h2><a href="{{ route('home.category.post', [$category['posts'][$i+1]['category']['slug'], $category['posts'][$i+1]['slug']]) }}">{{ $category['posts'][$i+1]['title'] }}</a></h2>
+                                                                <ul class="post-tags">
+                                                                    <li><i class="fa fa-clock-o"></i>{{ date('d M Y', time($category['posts'][$i+1]['created_at'])) }}</li>
+                                                                </ul>
+                                                            </div>
+                                                        </li>
+
+                                                        <li>
+                                                            <img src="{{ $category['posts'][$i+2]['picture'] }}" alt="">
+                                                            <div class="post-content">
+                                                                <h2><a href="{{ route('home.category.post', [$category['posts'][$i+2]['category']['slug'], $category['posts'][$i+2]['slug']]) }}">{{ $category['posts'][$i+2]['title'] }}</a></h2>
+                                                                <ul class="post-tags">
+                                                                    <li><i class="fa fa-clock-o"></i>{{ date('d M Y', time($category['posts'][$i+2]['created_at'])) }}</li>
+                                                                </ul>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <img src="{{ $category['posts'][$i+3]['picture'] }}" alt="">
+                                                            <div class="post-content">
+                                                                <h2><a href="{{ route('home.category.post', [$category['posts'][$i+3]['category']['slug'], $category['posts'][$i+3]['slug']]) }}">{{ $category['posts'][$i+3]['title'] }}</a></h2>
+                                                                <ul class="post-tags">
+                                                                    <li><i class="fa fa-clock-o"></i>{{ date('d M Y', time($category['posts'][$i+3]['created_at'])) }}</li>
+                                                                </ul>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            @endfor
+                                        </div>
+                                    </div>
+
+                                </div>
+                            @endif
+                        </div>
                         @endif
                         <!-- End grid box -->
                         @endforeach
@@ -426,55 +395,6 @@
                     <!-- End block content -->
 
                 </div>
-
-                <div class="col-sm-4">
-
-                    <!-- sidebar -->
-                    <div class="sidebar">
-
-                        <div class="widget social-widget">
-                            <div class="title-section">
-                                <h1><span>Stay Connected</span></h1>
-                            </div>
-                            <ul class="social-share">
-                                <li>
-                                    <a href="#" class="rss"><i class="fa fa-rss"></i></a>
-                                    <span class="number">9,455</span>
-                                    <span>Subscribers</span>
-                                </li>
-                                <li>
-                                    <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
-                                    <span class="number">56,743</span>
-                                    <span>Fans</span>
-                                </li>
-                                <li>
-                                    <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
-                                    <span class="number">43,501</span>
-                                    <span>Followers</span>
-                                </li>
-                                <li>
-                                    <a href="#" class="google"><i class="fa fa-google-plus"></i></a>
-                                    <span class="number">35,003</span>
-                                    <span>Followers</span>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div class="widget subscribe-widget">
-                            <form class="subscribe-form">
-                                <h1>Subscribe to RSS Feeds</h1>
-                                <input type="text" name="sumbscribe" id="subscribe" placeholder="Email"/>
-                                <button id="submit-subscribe">
-                                    <i class="fa fa-arrow-circle-right"></i>
-                                </button>
-                                <p>Get all latest content delivered to your email a few times a month.</p>
-                            </form>
-                        </div>
-                    </div>
-                    <!-- End sidebar -->
-
-                </div>
-
             </div>
 
         </div>

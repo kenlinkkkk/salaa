@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Post;
 use App\Repositories\Admin\CategoryEloquentRepository;
 use App\Repositories\Admin\PostEloquentRepository;
 use App\Repositories\Admin\TagEloquentRepository;
@@ -22,7 +23,7 @@ class PostController extends Controller
 
     public function index()
     {
-        $posts = $this->postEloquentRepository->edge('author_name');
+        $posts = Post::with('author_name')->with('category')->get();
 
         $data = compact('posts');
 
