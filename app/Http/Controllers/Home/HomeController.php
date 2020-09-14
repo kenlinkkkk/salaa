@@ -110,4 +110,9 @@ class HomeController extends Controller
 
         return view('home.detail_post', $data);
     }
+
+    public function upView(Request $request)
+    {
+
+    }
 }
