@@ -264,9 +264,9 @@
                                                     <img src="{{ asset($category['posts'][$i+1]['picture']) }}" alt="">
                                                     <div class="post-content">
                                                         <h2><a href="{{ route('home.category.post',[$category['posts'][$i+1]['category']['slug'], $category['posts'][$i+1]['slug']]) }}">{{$category['posts'][$i+1]['title'] }}</a></h2>
-                                                        <ul class="post-tags">
-                                                            <li><i class="fa fa-clock-o"></i>{{ date('d M Y', time($category['posts'][$i+1]['created_at'])) }}</li>
-                                                        </ul>
+{{--                                                        <ul class="post-tags">--}}
+{{--                                                            <li><i class="fa fa-clock-o"></i>{{ date('d M Y', time($category['posts'][$i+1]['created_at'])) }}</li>--}}
+{{--                                                        </ul>--}}
                                                     </div>
                                                 </li>
 
