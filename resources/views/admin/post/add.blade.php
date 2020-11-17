@@ -87,8 +87,7 @@
     <script src="{{ asset('assets/admin/libs/bs-custom-file-input/bs-custom-file-input.min.js') }}"></script>
 
     <!-- init js -->
-    <script src="{{ asset('assets/admin/js/pages/form-edi
-tor.init.js') }}"></script>
+    <script src="{{ asset('assets/admin/js/pages/form-editor.init.js') }}"></script>
     <script>
         bsCustomFileInput.init();
     </script>
