@@ -28,7 +28,7 @@
                                             <div class="post-title">
                                                 <h2><a href="{{ route('home.category.post', [$item['category']['slug'], $item['slug']]) }}">{{ $item['title'] }}</a></h2>
                                                 <ul class="post-tags">
-                                                    <li><i class="fa fa-clock-o"></i>{{ date('d M Y', time($item['created_at'])) }}</li>
+{{--                                                    <li><i class="fa fa-clock-o"></i>{{ date('d M Y', time($item['created_at'])) }}</li>--}}
                                                     <li><i class="fa fa-user"></i>by <a href="#">{{ $item['author_name']['name'] }}</a></li>
                                                     <li><i class="fa fa-eye"></i>{{ $item['view_count'] }}</li>
                                                 </ul>

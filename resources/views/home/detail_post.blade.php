@@ -18,7 +18,7 @@
                             <div class="title-post">
                                 <h1>{{ $post->title }}</h1>
                                 <ul class="post-tags">
-                                    <li><i class="fa fa-clock-o"></i>{{ date('d M Y', time($post->created_at)) }}</li>
+{{--                                    <li><i class="fa fa-clock-o"></i>{{ date('d M Y', time($post->created_at)) }}</li>--}}
                                     <li><i class="fa fa-user"></i>by <a href="#">{{ $post->author_name->name }}</a></li>
                                     <li><i class="fa fa-eye"></i>{{ $post->view_count }}</li>
                                 </ul>
