@@ -54,33 +54,30 @@ class HomeController extends Controller
         $breaking_news = Post::where('status', '=', 1)->with('category')->with('author_name')->limit(7)->get();
         $categories = Category::where('status',  '=', 1)->where('fa_category', '=', 0)->with('categories')->get();
         $cate = Category::where('slug', '=', $category)->where('status', '=', 1)->with('categories')->first();
-
         $current_page = empty($request->get('page')) ? 1 : $request->get('page');
         $next_page = $current_page + 1;
-
         $posts = null;
-        if (($request->get('page') > 1)){
-            if (count($cate->categories) > 0) {
-                $posts = Post::where('category_id', '=', $cate->id)->where('status', '=', 1)->with('category')->with('author_name')->skip(6)->take(6)->get()->toArray();
-                foreach ($cate->categories as $item) {
-                    $sub_posts = Post::where('category_id', '=', $item->id)->where('status', '=', 1)->with('category')->with('author_name')->skip(6)->take(6)->get()->toArray();
-                    $posts = array_merge($posts, $sub_posts);
-                }
-            } else {
-                $posts = Post::where('status', '=', 1)->with('category')->with('author_name')->limit(12)->get()->toArray();
-            }
-        } else {
-            if (count($cate->categories) > 0) {
-                $posts = Post::where('category_id', '=', $cate->id)->where('status', '=', 1)->with('category')->with('author_name')->limit(6)->get()->toArray();
-                foreach ($cate->categories as $item) {
-                    $sub_posts = Post::where('category_id', '=', $item->id)->where('status', '=', 1)->with('category')->with('author_name')->limit(6)->get()->toArray();
-                    $posts = array_merge($posts, $sub_posts);
-                }
-            } else {
-                $posts = Post::where('status', '=', 1)->with('category')->with('author_name')->limit(12)->get()->toArray();
-            }
-        }
-
+//        if (($request->get('page') > 1)){
+//            if (count($cate->categories) > 0) {
+                $posts = Post::where('category_id', '=', $cate->id)->where('status', '=', 1)->with('category')->with('author_name')->get()->toArray();
+//                foreach ($cate->categories as $item) {
+//                    $sub_posts = Post::where('category_id', '=', $item->id)->where('status', '=', 1)->with('category')->with('author_name')->skip(6)->take(6)->get()->toArray();
+//                    $posts = array_merge($posts, $sub_posts);
+//                }
+//            } else {
+//                $posts = Post::where('status', '=', 1)->with('category')->with('author_name')->limit(12)->get()->toArray();
+//            }
+//        } else {
+//            if (count($cate->categories) > 0) {
+//                $posts = Post::where('category_id', '=', $cate->id)->where('status', '=', 1)->with('category')->with('author_name')->limit(6)->get()->toArray();
+//                foreach ($cate->categories as $item) {
+//                    $sub_posts = Post::where('category_id', '=', $item->id)->where('status', '=', 1)->with('category')->with('author_name')->limit(6)->get()->toArray();
+//                    $posts = array_merge($posts, $sub_posts);
+//                }
+//            } else {
+//                $posts = Post::where('status', '=', 1)->with('category')->with('author_name')->limit(12)->get()->toArray();
+//            }
+//        }
         $data = compact(
             'breaking_news',
             'cate',

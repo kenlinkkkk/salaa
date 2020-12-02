@@ -8,6 +8,7 @@ use App\Repositories\Admin\CategoryEloquentRepository;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Throwable;
+use Image;
 
 class CategoryController extends Controller
 {
@@ -50,8 +51,11 @@ class CategoryController extends Controller
 
         if ($request->hasFile('picture')) {
             $picture = $request->picture;
+            $input['imageName'] = time() .'.'. $picture->extension();
             $filePath = 'uploads/home';
             $filePath = str_replace('\\', '/', $filePath);
+            $img = Image::make($picture->path());
+            $img->fit(293, 245)->save($filePath .'/'. $input['imageName']);
 
             $picture_name = $picture->getClientOriginalName();
             $picture->move($filePath, $picture_name);
