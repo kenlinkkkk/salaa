@@ -12,6 +12,9 @@ use Image;
 
 class CategoryController extends Controller
 {
+    const ART1 = ['w' => 270, 'h' => 200];
+    const ART2 = ['w' => 370, 'h' => 270];
+    const GALLERY = ['w' => 185, 'h' => 180];
     public function __construct(CategoryEloquentRepository $categoryEloquentRepository)
     {
         $this->categoryEloquentRepository = $categoryEloquentRepository;
@@ -51,15 +54,15 @@ class CategoryController extends Controller
 
         if ($request->hasFile('picture')) {
             $picture = $request->picture;
-            $input['imageName'] = time() .'.'. $picture->extension();
+            $input['imageName'] = 'art_1_'. $picture->getClientOriginalName();
             $filePath = 'uploads/home';
             $filePath = str_replace('\\', '/', $filePath);
             $img = Image::make($picture->path());
-            $img->fit(293, 245)->save($filePath .'/'. $input['imageName']);
+            $img->fit(self::ART1['w'], self::ART1['h'])->save($filePath .'/'. $input['imageName']);
 
             $picture_name = $picture->getClientOriginalName();
             $picture->move($filePath, $picture_name);
-            $data['picture'] = $filePath . '/' . $picture_name;
+            $data['picture'] = $picture_name;
         }
 
         try {
@@ -83,12 +86,15 @@ class CategoryController extends Controller
 
         if ($request->hasFile('picture')) {
             $picture = $request->picture;
+            $input['imageName'] = 'art_1_'. $picture->getClientOriginalName();
             $filePath = 'uploads/home';
             $filePath = str_replace('\\', '/', $filePath);
+            $img = Image::make($picture->path());
+            $img->fit(self::ART1['w'], self::ART1['h'])->save($filePath .'/'. $input['imageName']);
 
             $picture_name = $picture->getClientOriginalName();
             $picture->move($filePath, $picture_name);
-            $data['picture'] = $filePath . '/' . $picture_name;
+            $data['picture'] = $picture_name;
         }
 
         try {

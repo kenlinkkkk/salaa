@@ -8,7 +8,7 @@
         <div class="iso-call heading-news-box">
 
             <div class="news-post image-post default-size">
-                <img src="{{ asset($heading_news[0]->picture) }}" alt="">
+                <img src="{{ asset('/uploads/home/h1_1_'. $heading_news[0]->picture) }}" alt="{{ $heading_news[0]->title }}">
                 <div class="hover-box">
                     <div class="inner-hover">
                         <a class="category-post world" href="{{ route('home.category.index', [$heading_news[0]->category->slug]) }}">{{ $heading_news[0]->category->name }}</a>
@@ -26,7 +26,7 @@
                 <ul class="bxslider">
                     <li>
                         <div class="news-post image-post">
-                            <img src="{{ asset($heading_news[1]->picture) }}" alt="">
+                            <img src="{{ asset('uploads/home/h2_1_'. $heading_news[1]->picture) }}" alt="{{ $heading_news[1]->title }}">
                             <div class="hover-box">
                                 <div class="inner-hover">
                                     <a class="category-post world" href="{{ route('home.category.index', [$heading_news[1]->category->slug]) }}">{{ $heading_news[1]->category->name }}</a>
@@ -42,7 +42,7 @@
                     </li>
                     <li>
                         <div class="news-post image-post">
-                            <img src="{{ asset($heading_news[2]->picture) }}" alt="">
+                            <img src="{{ asset('uploads/home/h2_1_'. $heading_news[2]->picture) }}" alt="{{ $heading_news[2]->title }}">
                             <div class="hover-box">
                                 <div class="inner-hover">
                                     <a class="category-post world" href="{{ route('home.category.index', [$heading_news[2]->category->slug]) }}">{{ $heading_news[2]->category->name }}</a>
@@ -58,7 +58,7 @@
                     </li>
                     <li>
                         <div class="news-post image-post">
-                            <img src="{{ asset($heading_news[3]->picture) }}" alt="">
+                            <img src="{{ asset('uploads/home/h2_1_'. $heading_news[3]->picture) }}" alt="{{ $heading_news[3]->title }}">
                             <div class="hover-box">
                                 <div class="inner-hover">
                                     <a class="category-post world" href="{{ route('home.category.index', [$heading_news[3]->category->slug]) }}">{{ $heading_news[3]->category->name }}</a>
@@ -75,7 +75,7 @@
                     </li>
                     <li>
                         <div class="news-post image-post">
-                            <img src="{{ asset($heading_news[4]->picture) }}" alt="">
+                            <img src="{{ asset('uploads/home/h2_1_'. $heading_news[4]->picture) }}" alt="{{ $heading_news[4]->title }}">
                             <div class="hover-box">
                                 <div class="inner-hover">
                                     <a class="category-post world" href="{{ route('home.category.index', [$heading_news[4]->category->slug]) }}">{{ $heading_news[4]->category->name }}</a>
@@ -94,7 +94,7 @@
             </div>
 
             <div class="news-post image-post">
-                <img src="{{ asset($heading_news[5]->picture) }}" alt="">
+                <img src="{{ asset('uploads/home/h1_1_'. $heading_news[5]->picture) }}" alt="{{ $heading_news[5]->title }}">
                 <div class="hover-box">
                     <div class="inner-hover">
                         <a class="category-post world" href="{{ route('home.category.index', [$heading_news[5]->category->slug]) }}">{{ $heading_news[5]->category->name }}</a>
@@ -108,7 +108,7 @@
             </div>
 
             <div class="news-post image-post">
-                <img src="{{ asset($heading_news[6]->picture) }}" alt="">
+                <img src="{{ asset('uploads/home/h1_1_'. $heading_news[6]->picture) }}" alt="{{ $heading_news[6]->title }}">
                 <div class="hover-box">
                     <div class="inner-hover">
                         <a class="category-post world" href="{{ route('home.category.index', [$heading_news[6]->category->slug]) }}">{{ $heading_news[6]->category->name }}</a>
@@ -122,7 +122,7 @@
             </div>
 
             <div class="news-post image-post">
-                <img src="{{ asset($heading_news[7]->picture) }}" alt="">
+                <img src="{{ asset('uploads/home/h1_1_'. $heading_news[7]->picture) }}" alt="{{ $heading_news[7]->title }}">
                 <div class="hover-box">
                     <div class="inner-hover">
                         <a class="category-post world" href="{{ route('home.category.index', [$heading_news[7]->category->slug]) }}">{{ $heading_news[7]->category->name }}</a>
@@ -136,7 +136,7 @@
             </div>
 
             <div class="news-post image-post">
-                <img src="{{ asset($heading_news[8]->picture) }}" alt="">
+                <img src="{{ asset('uploads/home/h1_1_'. $heading_news[8]->picture) }}" alt="{{ $heading_news[8]->title }}">
                 <div class="hover-box">
                     <div class="inner-hover">
                         <a class="category-post world" href="{{ route('home.category.index', [$heading_news[8]->category->slug]) }}">{{ $heading_news[8]->category->name }}</a>
@@ -150,7 +150,7 @@
             </div>
 
             <div class="news-post image-post">
-                <img src="{{ asset($heading_news[9]->picture) }}" alt="">
+                <img src="{{ asset('uploads/home/h1_1_'. $heading_news[9]->picture) }}" alt="{{ $heading_news[9]->title }}">
                 <div class="hover-box">
                     <div class="inner-hover">
                         <a class="category-post world" href="{{ route('home.category.index', [$heading_news[9]->category->slug]) }}">{{ $heading_news[9]->category->name }}</a>
@@ -164,7 +164,7 @@
             </div>
 
             <div class="news-post image-post">
-                <img src="{{ asset($heading_news[10]->picture) }}" alt="">
+                <img src="{{ asset('uploads/home/h1_1_'. $heading_news[10]->picture) }}" alt="{{ $heading_news[10]->title }}">
                 <div class="hover-box">
                     <div class="inner-hover">
                         <a class="category-post world" href="{{ route('home.category.index', [$heading_news[10]->category->slug]) }}">{{ $heading_news[10]->category->name }}</a>
@@ -178,7 +178,7 @@
             </div>
 
             <div class="news-post image-post">
-                <img src="{{ asset($heading_news[11]->picture) }}" alt="">
+                <img src="{{ asset('uploads/home/h1_1_'. $heading_news[11]->picture) }}" alt="{{ $heading_news[11]->title }}">
                 <div class="hover-box">
                     <div class="inner-hover">
                         <a class="category-post world" href="{{ route('home.category.index', [$heading_news[11]->category->slug]) }}">{{ $heading_news[11]->category->name }}</a>
@@ -209,7 +209,7 @@
                     @foreach($breaking_news as $item)
                         <div class="item news-post standard-post">
                             <div class="post-gallery">
-                                <img src="{{ asset($item->picture) }}" alt="">
+                                <img src="{{ asset('uploads/home/st_1_'. $item->picture) }}" alt="{{ $item->title }}">
                                 <a class="category-post world" href="{{ route('home.category.index', [$item->category->slug]) }}">{{ $item->category->name }}</a>
                             </div>
                             <div class="post-content">
@@ -246,7 +246,7 @@
                                         <div class="item">
                                             <div class="news-post image-post2">
                                                 <div class="post-gallery">
-                                                    <img src="{{ asset($category['posts'][$i]['picture']) }}" alt="">
+                                                    <img src="{{ asset('uploads/home/im_1_'. $category['posts'][$i]['picture']) }}" alt="{{$category['posts'][$i]['title'] }}">
                                                     <div class="hover-box">
                                                         <div class="inner-hover">
                                                             <h2><a href="{{ route('home.category.post',[$category['posts'][$i]['category']['slug'], $category['posts'][$i]['slug']]) }}">{{$category['posts'][$i]['title'] }}</a></h2>
@@ -261,7 +261,7 @@
                                             </div>
                                             <ul class="list-posts">
                                                 <li>
-                                                    <img src="{{ asset($category['posts'][$i+1]['picture']) }}" alt="">
+                                                    <img src="{{ asset('uploads/home/list_1_'. $category['posts'][$i+1]['picture']) }}" alt="{{$category['posts'][$i+1]['title'] }}">
                                                     <div class="post-content">
                                                         <h2><a href="{{ route('home.category.post',[$category['posts'][$i+1]['category']['slug'], $category['posts'][$i+1]['slug']]) }}">{{$category['posts'][$i+1]['title'] }}</a></h2>
 {{--                                                        <ul class="post-tags">--}}
@@ -271,7 +271,7 @@
                                                 </li>
 
                                                 <li>
-                                                    <img src="{{ asset($category['posts'][$i+2]['picture']) }}" alt="">
+                                                    <img src="{{ asset('uploads/home/list_1_'. $category['posts'][$i+2]['picture']) }}" alt="{{$category['posts'][$i+2]['title'] }}">
                                                     <div class="post-content">
                                                         <h2><a href="{{ route('home.category.post',[$category['posts'][$i+2]['category']['slug'], $category['posts'][$i+2]['slug']]) }}">{{$category['posts'][$i+2]['title'] }}</a></h2>
 {{--                                                        <ul class="post-tags">--}}
@@ -281,7 +281,7 @@
                                                 </li>
 
                                                 <li>
-                                                    <img src="{{ asset($category['posts'][$i+3]['picture']) }}" alt="">
+                                                    <img src="{{ asset('uploads/home/list_1_'. $category['posts'][$i+3]['picture']) }}" alt="{{$category['posts'][$i+3]['title'] }} ">
                                                     <div class="post-content">
                                                         <h2><a href="{{ route('home.category.post',[$category['posts'][$i+3]['category']['slug'], $category['posts'][$i+3]['slug']]) }}">{{$category['posts'][$i+3]['title'] }}</a></h2>
 {{--                                                        <ul class="post-tags">--}}
@@ -311,7 +311,7 @@
                                                     <li>
                                                         <div class="news-post image-post2">
                                                             <div class="post-gallery">
-                                                                <img src="{{ asset($item['picture']) }}" alt="">
+                                                                <img src="{{ asset('uploads/home/im_1_'. $item['picture']) }}" alt="{{ $item['title'] }}">
                                                                 <div class="hover-box">
                                                                     <div class="inner-hover">
                                                                         <h2><a href="{{ route('home.category.post', [$item['category']['slug'], $item['slug']]) }}">{{ $item['title'] }}</a></h2>
@@ -342,7 +342,7 @@
                                                 <div class="item">
                                                     <ul class="list-posts">
                                                         <li>
-                                                            <img src="{{ $category['posts'][$i]['picture'] }}" alt="">
+                                                            <img src="{{ asset('uploads/home/list_1_'. $category['posts'][$i]['picture']) }}" alt="{{ $category['posts'][$i]['title'] }}">
                                                             <div class="post-content">
                                                                 <h2><a href="{{ route('home.category.post', [$category['posts'][$i]['category']['slug'], $category['posts'][$i]['slug']]) }}">{{ $category['posts'][$i]['title'] }}</a></h2>
 {{--                                                                <ul class="post-tags">--}}
@@ -352,7 +352,7 @@
                                                         </li>
 
                                                         <li>
-                                                            <img src="{{ $category['posts'][$i+1]['picture'] }}" alt="">
+                                                            <img src="{{ asset('uploads/home/list_1_'. $category['posts'][$i+1]['picture']) }}" alt="{{ $category['posts'][$i+1]['title'] }}">
                                                             <div class="post-content">
                                                                 <h2><a href="{{ route('home.category.post', [$category['posts'][$i+1]['category']['slug'], $category['posts'][$i+1]['slug']]) }}">{{ $category['posts'][$i+1]['title'] }}</a></h2>
 {{--                                                                <ul class="post-tags">--}}
@@ -362,7 +362,7 @@
                                                         </li>
 
                                                         <li>
-                                                            <img src="{{ $category['posts'][$i+2]['picture'] }}" alt="">
+                                                            <img src="{{ asset('uploads/home/list_1_'. $category['posts'][$i+2]['picture']) }}" alt="{{ $category['posts'][$i+2]['title'] }}">
                                                             <div class="post-content">
                                                                 <h2><a href="{{ route('home.category.post', [$category['posts'][$i+2]['category']['slug'], $category['posts'][$i+2]['slug']]) }}">{{ $category['posts'][$i+2]['title'] }}</a></h2>
 {{--                                                                <ul class="post-tags">--}}
@@ -371,7 +371,7 @@
                                                             </div>
                                                         </li>
                                                         <li>
-                                                            <img src="{{ $category['posts'][$i+3]['picture'] }}" alt="">
+                                                            <img src="{{ asset('uploads/home/list_1_'. $category['posts'][$i+3]['picture']) }}" alt="{{ $category['posts'][$i+3]['title'] }}">
                                                             <div class="post-content">
                                                                 <h2><a href="{{ route('home.category.post', [$category['posts'][$i+3]['category']['slug'], $category['posts'][$i+3]['slug']]) }}">{{ $category['posts'][$i+3]['title'] }}</a></h2>
 {{--                                                                <ul class="post-tags">--}}

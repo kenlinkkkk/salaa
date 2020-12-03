@@ -14,6 +14,13 @@ use Throwable;
 
 class PostController extends Controller
 {
+    const IM = ['w' => 368, 'h' => 300];
+    const LIST = ['w' => 100, 'h' => 80];
+    const GALLERY = ['w' => 185, 'h' => 180];
+    const POST_H1 = ['w' => 293, 'h' => 245];
+    const POST_H2 = ['w' => 586, 'h' => 490];
+    const ST = ['w' => 270, 'h' => 200];
+
     public function __construct(PostEloquentRepository $postEloquentRepository, CategoryEloquentRepository $categoryEloquentRepository, TagEloquentRepository $tagEloquentRepository)
     {
         $this->postEloquentRepository = $postEloquentRepository;
@@ -61,12 +68,25 @@ class PostController extends Controller
 
         if ($request->hasFile('picture')) {
             $picture = $request->picture;
+            $input['imageName_IM'] = 'im_1_'. $picture->getClientOriginalName();
+            $input['imageName_LIST'] = 'list_1_'. $picture->getClientOriginalName();
+            $input['imageName_GAL'] = 'gal_1_'. $picture->getClientOriginalName();
+            $input['imageName_H1'] = 'h1_1_'. $picture->getClientOriginalName();
+            $input['imageName_H2'] = 'h2_1_'. $picture->getClientOriginalName();
+            $input['imageName_ST'] = 'st_1_'. $picture->getClientOriginalName();
             $filePath = 'uploads/home';
             $filePath = str_replace('\\', '/', $filePath);
+            $img = Image::make($picture->path());
+            $img->fit(self::IM['w'], self::IM['h'])->save($filePath .'/'. $input['imageName_IM']);
+            $img->fit(self::LIST['w'], self::LIST['h'])->save($filePath .'/'. $input['imageName_LIST']);
+            $img->fit(self::GALLERY['w'], self::GALLERY['h'])->save($filePath .'/'. $input['imageName_GAL']);
+            $img->fit(self::POST_H1['w'], self::POST_H1['h'])->save($filePath .'/'. $input['imageName_H1']);
+            $img->fit(self::POST_H2['w'], self::POST_H2['h'])->save($filePath .'/'. $input['imageName_H2']);
+            $img->fit(self::ST['w'], self::ST['h'])->save($filePath .'/'. $input['imageName_ST']);
 
             $picture_name = $picture->getClientOriginalName();
             $picture->move($filePath, $picture_name);
-            $data['picture'] = $filePath . '/' . $picture_name;
+            $data['picture'] = $picture_name;
         }
 
         try {
@@ -92,12 +112,26 @@ class PostController extends Controller
 
         if ($request->hasFile('picture')) {
             $picture = $request->picture;
+            $input['imageName_IM'] = 'im_1_'. $picture->getClientOriginalName();
+            $input['imageName_LIST'] = 'list_1_'. $picture->getClientOriginalName();
+            $input['imageName_GAL'] = 'gal_1_'. $picture->getClientOriginalName();
+            $input['imageName_H1'] = 'h1_1_'. $picture->getClientOriginalName();
+            $input['imageName_H2'] = 'h2_1_'. $picture->getClientOriginalName();
+            $input['imageName_ST'] = 'st_1_'. $picture->getClientOriginalName();
+
             $filePath = 'uploads/home';
             $filePath = str_replace('\\', '/', $filePath);
+            $img = Image::make($picture->path());
+            $img->fit(self::IM['w'], self::IM['h'])->save($filePath .'/'. $input['imageName_IM']);
+            $img->fit(self::LIST['w'], self::LIST['h'])->save($filePath .'/'. $input['imageName_LIST']);
+            $img->fit(self::GALLERY['w'], self::GALLERY['h'])->save($filePath .'/'. $input['imageName_GAL']);
+            $img->fit(self::POST_H1['w'], self::POST_H1['h'])->save($filePath .'/'. $input['imageName_H1']);
+            $img->fit(self::POST_H2['w'], self::POST_H2['h'])->save($filePath .'/'. $input['imageName_H2']);
+            $img->fit(self::ST['w'], self::ST['h'])->save($filePath .'/'. $input['imageName_ST']);
 
             $picture_name = $picture->getClientOriginalName();
             $picture->move($filePath, $picture_name);
-            $data['picture'] = $filePath . '/' . $picture_name;
+            $data['picture'] = $picture_name;
         }
 
         try {

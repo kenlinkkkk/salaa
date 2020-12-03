@@ -23,7 +23,7 @@
                                     <div class="col-md-6">
                                         <div class="news-post standard-post2">
                                             <div class="post-gallery">
-                                                <img src="{{ $item['picture'] }}" alt="">
+                                                <img src="{{ asset('uploads/home/im_1_'. $item['picture']) }}" alt="{{ $item['title'] }}">
                                             </div>
                                             <div class="post-title">
                                                 <h2><a href="{{ route('home.category.post', [$item['category']['slug'], $item['slug']]) }}">{{ $item['title'] }}</a></h2>
