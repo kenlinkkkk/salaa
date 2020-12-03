@@ -39,7 +39,7 @@
                         </div>
                         <div class="form-group">
                             <label>Slug</label>
-                            <input type="text" class="form-control" name="slug" value="{{ $post->slug }}" readonly>
+                            <input type="text" class="form-control" name="slug" value="{{ $post->slug }}">
                         </div>
                         <div class="row">
                             <div class="form-group col-sm-12 col-md-8">
