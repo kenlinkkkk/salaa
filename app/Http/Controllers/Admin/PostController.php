@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Throwable;
+use Image;
 
 class PostController extends Controller
 {
@@ -77,12 +78,12 @@ class PostController extends Controller
             $filePath = 'uploads/home';
             $filePath = str_replace('\\', '/', $filePath);
             $img = Image::make($picture->path());
-            $img->fit(self::IM['w'], self::IM['h'])->save($filePath .'/'. $input['imageName_IM']);
-            $img->fit(self::LIST['w'], self::LIST['h'])->save($filePath .'/'. $input['imageName_LIST']);
-            $img->fit(self::GALLERY['w'], self::GALLERY['h'])->save($filePath .'/'. $input['imageName_GAL']);
-            $img->fit(self::POST_H1['w'], self::POST_H1['h'])->save($filePath .'/'. $input['imageName_H1']);
-            $img->fit(self::POST_H2['w'], self::POST_H2['h'])->save($filePath .'/'. $input['imageName_H2']);
-            $img->fit(self::ST['w'], self::ST['h'])->save($filePath .'/'. $input['imageName_ST']);
+            $img->fit(self::IM['w'], self::IM['h'])->save($filePath .'/'. $input['imageName_IM'], 100);
+            $img->fit(self::LIST['w'], self::LIST['h'])->save($filePath .'/'. $input['imageName_LIST'], 100);
+            $img->fit(self::GALLERY['w'], self::GALLERY['h'])->save($filePath .'/'. $input['imageName_GAL'], 100);
+            $img->fit(self::POST_H1['w'], self::POST_H1['h'])->save($filePath .'/'. $input['imageName_H1'], 100);
+            $img->fit(self::POST_H2['w'], self::POST_H2['h'])->save($filePath .'/'. $input['imageName_H2'], 100);
+            $img->fit(self::ST['w'], self::ST['h'])->save($filePath .'/'. $input['imageName_ST'], 100);
 
             $picture_name = $picture->getClientOriginalName();
             $picture->move($filePath, $picture_name);
@@ -122,12 +123,12 @@ class PostController extends Controller
             $filePath = 'uploads/home';
             $filePath = str_replace('\\', '/', $filePath);
             $img = Image::make($picture->path());
-            $img->fit(self::IM['w'], self::IM['h'])->save($filePath .'/'. $input['imageName_IM']);
-            $img->fit(self::LIST['w'], self::LIST['h'])->save($filePath .'/'. $input['imageName_LIST']);
-            $img->fit(self::GALLERY['w'], self::GALLERY['h'])->save($filePath .'/'. $input['imageName_GAL']);
-            $img->fit(self::POST_H1['w'], self::POST_H1['h'])->save($filePath .'/'. $input['imageName_H1']);
-            $img->fit(self::POST_H2['w'], self::POST_H2['h'])->save($filePath .'/'. $input['imageName_H2']);
-            $img->fit(self::ST['w'], self::ST['h'])->save($filePath .'/'. $input['imageName_ST']);
+            $img->fit(self::IM['w'], self::IM['h'])->save($filePath .'/'. $input['imageName_IM'], 100);
+            $img->fit(self::LIST['w'], self::LIST['h'])->save($filePath .'/'. $input['imageName_LIST'], 100);
+            $img->fit(self::GALLERY['w'], self::GALLERY['h'])->save($filePath .'/'. $input['imageName_GAL'], 100);
+            $img->fit(self::POST_H1['w'], self::POST_H1['h'])->save($filePath .'/'. $input['imageName_H1'], 100);
+            $img->fit(self::POST_H2['w'], self::POST_H2['h'])->save($filePath .'/'. $input['imageName_H2'], 100);
+            $img->fit(self::ST['w'], self::ST['h'])->save($filePath .'/'. $input['imageName_ST'], 100);
 
             $picture_name = $picture->getClientOriginalName();
             $picture->move($filePath, $picture_name);

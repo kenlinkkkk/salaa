@@ -14,7 +14,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="{{ route('home.index') }}"><img src="{{ asset('assets/client/images/logo.png') }}" alt=""></a>
+                    <a class="navbar-brand" href="{{ route('home.index') }}"><img src="{{ asset('assets/client/images/logo1.png') }}" alt="Mytalk"></a>
                 </div>
             </div>
         </div>
@@ -42,7 +42,7 @@
                         @endforeach
                     </ul>
                     <form class="navbar-form navbar-right" role="search">
-                        <input type="text" id="search" name="search" placeholder="Search here">
+                        <input type="text" id="search" name="search" placeholder="Tìm kiếm">
                         <button type="submit" id="search-submit"><i class="fa fa-search"></i></button>
                     </form>
                 </div>

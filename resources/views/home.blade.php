@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('title')
-    <title>Trang chủ | SNews</title>
+    <title>Trang chủ | Tin tức</title>
 @endsection
 @section('heading-news')
     <section class="heading-news">
