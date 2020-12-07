@@ -122,8 +122,8 @@
         });
     </script>
     <script>
-        $(document).ready(function () {
-            $('#data-table').DataTable();
-        });
+        // $(document).ready(function () {
+        //     $('#data-table').DataTable();
+        // });
     </script>
 @endsection

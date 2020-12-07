@@ -83,8 +83,9 @@ class PostController extends Controller
             $img->fit(self::GALLERY['w'], self::GALLERY['h'])->save($filePath .'/'. $input['imageName_GAL'], 100);
             $img->fit(self::POST_H1['w'], self::POST_H1['h'])->save($filePath .'/'. $input['imageName_H1'], 100);
             $img->fit(self::POST_H2['w'], self::POST_H2['h'])->save($filePath .'/'. $input['imageName_H2'], 100);
-            $img->fit(self::ST['w'], self::ST['h'])->save($filePath .'/'. $input['imageName_ST'], 100);
-
+            $img->fit(self::ST['w'], self::ST['h'], function ($constraint) {
+                $constraint->upsize();
+            })->save($filePath .'/'. $input['imageName_ST'], 100);
             $picture_name = $picture->getClientOriginalName();
             $picture->move($filePath, $picture_name);
             $data['picture'] = $picture_name;
