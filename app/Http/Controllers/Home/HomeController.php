@@ -59,7 +59,7 @@ class HomeController extends Controller
         $posts = null;
 //        if (($request->get('page') > 1)){
 //            if (count($cate->categories) > 0) {
-                $posts = Post::where('category_id', '=', $cate->id)->where('status', '=', 1)->with('category')->with('author_name')->get()->toArray();
+                $posts = Post::where('category_id', '=', $cate->id)->where('status', '=', 1)->with('category')->with('author_name')->orderBy('created_at', 'desc')->paginate(6);
 //                foreach ($cate->categories as $item) {
 //                    $sub_posts = Post::where('category_id', '=', $item->id)->where('status', '=', 1)->with('category')->with('author_name')->skip(6)->take(6)->get()->toArray();
 //                    $posts = array_merge($posts, $sub_posts);

@@ -77,15 +77,36 @@ class PostController extends Controller
             $input['imageName_ST'] = 'st_1_'. $picture->getClientOriginalName();
             $filePath = 'uploads/home';
             $filePath = str_replace('\\', '/', $filePath);
-            $img = Image::make($picture->path());
-            $img->fit(self::IM['w'], self::IM['h'])->save($filePath .'/'. $input['imageName_IM'], 100);
-            $img->fit(self::LIST['w'], self::LIST['h'])->save($filePath .'/'. $input['imageName_LIST'], 100);
-            $img->fit(self::GALLERY['w'], self::GALLERY['h'])->save($filePath .'/'. $input['imageName_GAL'], 100);
-            $img->fit(self::POST_H1['w'], self::POST_H1['h'])->save($filePath .'/'. $input['imageName_H1'], 100);
-            $img->fit(self::POST_H2['w'], self::POST_H2['h'])->save($filePath .'/'. $input['imageName_H2'], 100);
-            $img->fit(self::ST['w'], self::ST['h'], function ($constraint) {
+
+            $img1 = Image::make($picture->path());
+            $img1->fit(self::IM['w'], self::IM['h'], function ($constraint) {
+                $constraint->aspectRatio();
+                $constraint->upsize();
+            })->save($filePath .'/'. $input['imageName_IM'], 100);
+            $img1->fit(self::LIST['w'], self::LIST['h'], function ($constraint) {
+                $constraint->aspectRatio();
+                $constraint->upsize();
+            })->save($filePath .'/'. $input['imageName_LIST'], 100);
+            $img2 = Image::make($picture->path());
+            $img2->fit(self::GALLERY['w'], self::GALLERY['h'], function ($constraint) {
+                $constraint->aspectRatio();
+                $constraint->upsize();
+            })->save($filePath .'/'. $input['imageName_GAL'], 100);
+            $img3 = Image::make($picture->path());
+            $img3->fit(self::POST_H1['w'], self::POST_H1['h'], function ($constraint) {
+                $constraint->aspectRatio();
+                $constraint->upsize();
+            })->save($filePath .'/'. $input['imageName_H1'], 100);
+            $img4 = Image::make($picture->path());
+            $img4->fit(self::POST_H2['w'], self::POST_H2['h'], function ($constraint) {
+                $constraint->aspectRatio();
+                $constraint->upsize();
+            })->save($filePath .'/'. $input['imageName_H2'], 100);
+            $img4->fit(self::ST['w'], self::ST['h'], function ($constraint) {
+                $constraint->aspectRatio();
                 $constraint->upsize();
             })->save($filePath .'/'. $input['imageName_ST'], 100);
+
             $picture_name = $picture->getClientOriginalName();
             $picture->move($filePath, $picture_name);
             $data['picture'] = $picture_name;
@@ -123,13 +144,34 @@ class PostController extends Controller
 
             $filePath = 'uploads/home';
             $filePath = str_replace('\\', '/', $filePath);
-            $img = Image::make($picture->path());
-            $img->fit(self::IM['w'], self::IM['h'])->save($filePath .'/'. $input['imageName_IM'], 100);
-            $img->fit(self::LIST['w'], self::LIST['h'])->save($filePath .'/'. $input['imageName_LIST'], 100);
-            $img->fit(self::GALLERY['w'], self::GALLERY['h'])->save($filePath .'/'. $input['imageName_GAL'], 100);
-            $img->fit(self::POST_H1['w'], self::POST_H1['h'])->save($filePath .'/'. $input['imageName_H1'], 100);
-            $img->fit(self::POST_H2['w'], self::POST_H2['h'])->save($filePath .'/'. $input['imageName_H2'], 100);
-            $img->fit(self::ST['w'], self::ST['h'])->save($filePath .'/'. $input['imageName_ST'], 100);
+            $img1 = Image::make($picture->path());
+            $img1->fit(self::IM['w'], self::IM['h'], function ($constraint) {
+                $constraint->aspectRatio();
+                $constraint->upsize();
+            })->save($filePath .'/'. $input['imageName_IM'], 100);
+            $img1->fit(self::LIST['w'], self::LIST['h'], function ($constraint) {
+                $constraint->aspectRatio();
+                $constraint->upsize();
+            })->save($filePath .'/'. $input['imageName_LIST'], 100);
+            $img2 = Image::make($picture->path());
+            $img2->fit(self::GALLERY['w'], self::GALLERY['h'], function ($constraint) {
+                $constraint->aspectRatio();
+                $constraint->upsize();
+            })->save($filePath .'/'. $input['imageName_GAL'], 100);
+            $img3 = Image::make($picture->path());
+            $img3->fit(self::POST_H1['w'], self::POST_H1['h'], function ($constraint) {
+                $constraint->aspectRatio();
+                $constraint->upsize();
+            })->save($filePath .'/'. $input['imageName_H1'], 100);
+            $img4 = Image::make($picture->path());
+            $img4->fit(self::POST_H2['w'], self::POST_H2['h'], function ($constraint) {
+                $constraint->aspectRatio();
+                $constraint->upsize();
+            })->save($filePath .'/'. $input['imageName_H2'], 100);
+            $img4->fit(self::ST['w'], self::ST['h'], function ($constraint) {
+                $constraint->aspectRatio();
+                $constraint->upsize();
+            })->save($filePath .'/'. $input['imageName_ST'], 100);
 
             $picture_name = $picture->getClientOriginalName();
             $picture->move($filePath, $picture_name);

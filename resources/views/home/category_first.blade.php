@@ -20,7 +20,7 @@
 
                             <div class="row">
                                 @foreach($posts as $item)
-                                    <div class="col-md-6">
+                                    <div class="col-sm-6 col-md-6">
                                         <div class="news-post standard-post2">
                                             <div class="post-gallery">
                                                 <img src="{{ asset('uploads/home/im_1_'. $item['picture']) }}" alt="{{ $item['title'] }}">
@@ -46,8 +46,9 @@
                         <!-- pagination box -->
                         <div class="pagination-box">
                             <ul class="pagination-list">
-                                <li><a class="active" href="{{ route('home.category.index', [$cate->slug, 'page='. $current_page]) }}">{{ $current_page }}</a></li>
-                                <li><a href="{{ route('home.category.index', [$cate->slug, 'page='. $next_page]) }}">Next</a></li>
+{{--                                <li><a class="active" href="{{ route('home.category.index', [$cate->slug, 'page='. $current_page]) }}">{{ $current_page }}</a></li>--}}
+{{--                                <li><a href="{{ route('home.category.index', [$cate->slug, 'page='. $next_page]) }}">Next</a></li>--}}
+                                {!! $posts->links() !!}
                             </ul>
                         </div>
                         <!-- End Pagination box -->
