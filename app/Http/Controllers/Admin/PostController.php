@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
 use App\Models\Post;
 use App\Repositories\Admin\CategoryEloquentRepository;
 use App\Repositories\Admin\PostEloquentRepository;
@@ -40,7 +41,7 @@ class PostController extends Controller
 
     public function add()
     {
-        $categories = $this->categoryEloquentRepository->getAll();
+        $categories = Category::query()->where('status', '=', 1)->get();
         $data = compact(
             'categories'
         );
@@ -51,7 +52,7 @@ class PostController extends Controller
     public function edit($post_id)
     {
         $post = $this->postEloquentRepository->find($post_id);
-        $categories = $this->categoryEloquentRepository->getAll();
+        $categories = Category::query()->where('status', '=', 1)->get();
         $data = compact(
             'post',
             'categories'

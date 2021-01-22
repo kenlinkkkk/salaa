@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('title')
-    <title>{{ $cate->name }} | SNews</title>
+    <title>{{ $cate->name }} | Tin tức</title>
 @endsection
 
 @section('content')
