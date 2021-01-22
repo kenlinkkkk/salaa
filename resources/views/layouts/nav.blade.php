@@ -14,7 +14,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="{{ route('home.index') }}"><img src="{{ asset('assets/client/images/logo1.png') }}" alt="Mytalk"></a>
+                    <a class="navbar-brand" href="{{ route('home.index') }}"><img src="{{ asset('assets/client/images/logo.png') }}" alt="" style="padding: 0; width: 80px;"></a>
                 </div>
             </div>
         </div>
