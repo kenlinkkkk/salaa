@@ -132,7 +132,6 @@ class PostController extends Controller
     public function update(Request $request, $post_id)
     {
         $data = $request->except('_token');
-        $data['tag'] = json_encode($data['tag']);
 
         if ($request->hasFile('picture')) {
             $picture = $request->picture;
@@ -196,8 +195,6 @@ class PostController extends Controller
 
     public function delete(Request $request, $post_id)
     {
-        $data = $request->except('_token');
-
         try {
             $result = $this->postEloquentRepository->delete($post_id);
 
