@@ -32,7 +32,7 @@ class PostController extends Controller
 
     public function index()
     {
-        $posts = Post::with('author_name')->with('category')->get();
+        $posts = Post::with('author_name')->with('category')->paginate(10);
 
         $data = compact('posts');
 
@@ -199,7 +199,7 @@ class PostController extends Controller
         $data = $request->except('_token');
 
         try {
-            $result = $this->postEloquentRepository->update($post_id, $data);
+            $result = $this->postEloquentRepository->delete($post_id);
 
             if ($result) {
                 $request->session()->flash('success', 'Thành công');

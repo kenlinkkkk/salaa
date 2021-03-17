@@ -67,8 +67,8 @@
                                     @else
                                         <td><span class="badge badge-pill badge-danger float-right">Inactive</span></td>
                                     @endif
-                                    <td class="text-right pt-1">
-                                        <form id="form-{{ $item->id }}" method="post" action="{{ route('admin.post.delete', [$item->id]) }}">
+                                    <td class="text-right pt-1 d-inline-flex">
+                                        <form id="form-{{ $item->id }}" method="post" action="{{ route('admin.post.update', [$item->id]) }}">
                                             @csrf
                                             <a href="{{ route('admin.post.edit', [$item->id]) }}" class="btn btn-success btn-sm">Sửa</a>
                                             <input type="hidden" name="status" value="{{ $item->status == 1 ? 0 : 1 }}">
@@ -78,10 +78,18 @@
                                                 <button type="submit" itemId="{{ $item->id }}" class="btn btn-success btn-sm btn-delete">Active</button>
                                             @endif
                                         </form>
+
+                                        <form class="ml-4" id="form-delete-{{ $item->id }}" method="post" action="{{ route('admin.post.delete', [$item->id]) }}">
+                                            @csrf
+                                            <button type="submit" itemDeleteId="{{ $item->id }}" class="btn btn-danger btn-sm btn-delete-force">Xóa</button>
+                                        </form>
                                     </td>
                                 </tr>
                             @endforeach
                         </tbody>
+                        <tfoot>
+                        {{ $posts->links() }}
+                        </tfoot>
                     </table>
                 </div>
             </div>
@@ -117,6 +125,25 @@
             }).then((result) => {
                 if (result.value) {
                     $('#form-' + id).submit();
+                }
+            });
+        });
+
+        $("body").on("click", ".btn-delete-force", function(e){
+            e.preventDefault();
+            let id = $(this).attr('itemDeleteId');
+            swal.fire({
+                title: "Bạn có chắc không?",
+                text: "Bạn sẽ không thể khôi phục lại thông tin này khi đã xóa!",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonClass: "btn-danger",
+                confirmButtonText: "Đúng! Tôi chắc chắn!",
+                cancelButtonText: "Hủy",
+                closeOnConfirm: false
+            }).then((result) => {
+                if (result.value) {
+                    $('#form-delete-' + id).submit();
                 }
             });
         });
