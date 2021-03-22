@@ -33,7 +33,7 @@
                                     <h2><a href="{{ route('home.category.post', [$heading_news[1]->category->slug, $heading_news[1]->slug]) }}">{{ $heading_news[1]->title }}</a></h2>
                                     <ul class="post-tags">
 {{--                                        <li><i class="fa fa-clock-o"></i>{{ date('d M Y', time($heading_news[1]->created_at)) }}</li>--}}
-                                        <li><i class="fa fa-user"></i>by <a href="#">{{ $heading_news[1]->author_name->name }}</a></li>
+{{--                                        <li><i class="fa fa-user"></i>by <a href="#">{{ $heading_news[1]->author_name->name }}</a></li>--}}
                                         <li><i class="fa fa-eye"></i>{{ $heading_news[1]->view_count }}</li>
                                     </ul>
                                 </div>
@@ -49,7 +49,7 @@
                                     <h2><a href="{{ route('home.category.post', [$heading_news[2]->category->slug, $heading_news[2]->slug]) }}">{{ $heading_news[2]->title }}</a></h2>
                                     <ul class="post-tags">
 {{--                                        <li><i class="fa fa-clock-o"></i>{{ date('d M Y', time($heading_news[2]->created_at)) }}</li>--}}
-                                        <li><i class="fa fa-user"></i>by <a href="#">{{ $heading_news[2]->author_name->name }}</a></li>
+{{--                                        <li><i class="fa fa-user"></i>by <a href="#">{{ $heading_news[2]->author_name->name }}</a></li>--}}
                                         <li><i class="fa fa-eye"></i>{{ $heading_news[2]->view_count }}</li>
                                     </ul>
                                 </div>
@@ -65,7 +65,7 @@
                                     <h2><a href="{{ route('home.category.post', [$heading_news[3]->category->slug, $heading_news[3]->slug]) }}">{{ $heading_news[3]->title }}</a></h2>
                                     <ul class="post-tags">
 {{--                                        <li><i class="fa fa-clock-o"></i>{{ date('d M Y', time($heading_news[3]->created_at)) }}</li>--}}
-                                        <li><i class="fa fa-user"></i>by <a href="#">{{ $heading_news[3]->author_name->name }}</a></li>
+{{--                                        <li><i class="fa fa-user"></i>by <a href="#">{{ $heading_news[3]->author_name->name }}</a></li>--}}
                                         <li><i class="fa fa-eye"></i>{{ $heading_news[3]->view_count }}</li>
                                     </ul>
                                     <p>{{ $heading_news[3]->description }}</p>
@@ -82,7 +82,7 @@
                                     <h2><a href="{{ route('home.category.post', [$heading_news[4]->category->slug, $heading_news[4]->slug]) }}">{{ $heading_news[4]->title }}</a></h2>
                                     <ul class="post-tags">
 {{--                                        <li><i class="fa fa-clock-o"></i>{{ date('d M Y', time($heading_news[4]->created_at)) }}</li>--}}
-                                        <li><i class="fa fa-user"></i>by <a href="#">{{ $heading_news[4]->author_name->name }}</a></li>
+{{--                                        <li><i class="fa fa-user"></i>by <a href="#">{{ $heading_news[4]->author_name->name }}</a></li>--}}
                                         <li><i class="fa fa-eye"></i>{{ $heading_news[4]->view_count }}</li>
                                     </ul>
                                     <p>{{ $heading_news[4]->description }}</p>
@@ -216,7 +216,7 @@
                                 <h2><a href="{{ route('home.category.post',[$item->category->slug, $item->slug]) }}">{{ $item->title }}</a></h2>
                                 <ul class="post-tags">
 {{--                                    <li><i class="fa fa-clock-o"></i>{{ date('d M Y', time($item->created_at)) }}</li>--}}
-                                    <li><i class="fa fa-user"></i>by <a href="#">{{ $item->author_name->name }}</a></li>
+{{--                                    <li><i class="fa fa-user"></i>by <a href="#">{{ $item->author_name->name }}</a></li>--}}
                                 </ul>
                             </div>
                         </div>
@@ -252,7 +252,7 @@
                                                             <h2><a href="{{ route('home.category.post',[$category['posts'][$i]['category']['slug'], $category['posts'][$i]['slug']]) }}">{{$category['posts'][$i]['title'] }}</a></h2>
                                                             <ul class="post-tags">
 {{--                                                                <li><i class="fa fa-clock-o"></i>{{ date('d M Y', time($category['posts'][$i]['created_at'])) }}</li>--}}
-                                                                <li><i class="fa fa-user"></i>by <a href="#">{{$category['posts'][$i]['author_name']['name'] }}</a></li>
+{{--                                                                <li><i class="fa fa-user"></i>by <a href="#">{{$category['posts'][$i]['author_name']['name'] }}</a></li>--}}
                                                                 <li><i class="fa fa-eye"></i>{{ $category['posts'][$i]['view_count'] }}</li>
                                                             </ul>
                                                         </div>
@@ -317,7 +317,7 @@
                                                                         <h2><a href="{{ route('home.category.post', [$item['category']['slug'], $item['slug']]) }}">{{ $item['title'] }}</a></h2>
                                                                         <ul class="post-tags">
 {{--                                                                            <li><i class="fa fa-clock-o"></i>{{ date('d M Y', time($item['created_at'])) }}</li>--}}
-                                                                            <li><i class="fa fa-user"></i>by <a href="#">{{ $item['author_name']['name'] }}</a></li>
+{{--                                                                            <li><i class="fa fa-user"></i>by <a href="#">{{ $item['author_name']['name'] }}</a></li>--}}
                                                                             <li><i class="fa fa-eye"></i>{{ $item['view_count'] }}</li>
                                                                         </ul>
                                                                     </div>
